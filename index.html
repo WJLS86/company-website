@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>公司官网</title>
+</head>
+<body>
+  <h2>留言表单</h2>
+  <form id="form">
+    <input type="text" id="name" placeholder="姓名" required><br>
+    <input type="tel" id="phone" placeholder="电话" required><br>
+    <input type="email" id="email" placeholder="邮箱"><br>
+    <button type="submit">提交</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value
+      };
+
+      try {
+        // 改为相对路径（适配Vercel）
+        const res = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        alert(result.msg);
+      } catch (err) {
+        alert("提交失败：" + err.message);
+      }
+    });
+  </script>
+</body>
+</html>
