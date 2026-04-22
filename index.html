@@ -2,18 +2,2003 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>公司官网</title>
-</head>
-<body>
-  <h2>留言表单</h2>
-  <form id="form">
-    <input type="text" id="name" placeholder="姓名" required><br>
-    <input type="tel" id="phone" placeholder="电话" required><br>
-    <input type="email" id="email" placeholder="邮箱"><br>
-    <button type="submit">提交</button>
-  </form>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Da Miin 大敏单车 - 敏行无界</title>
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 AOS 动画库 -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 引入 Font Awesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- 自定义配置 -->
   <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2775BB',
+            secondary: '#165DFF',
+            brandRed: '#C41E24',
+            dark: '#111111',
+            lightGray: '#f5f5f5',
+            gray100: '#f8f9fa',
+            gray200: '#e9ecef',
+            gray300: '#dee2e6',
+            gray400: '#ced4da',
+            gray500: '#adb5bd',
+            gray600: '#6c757d',
+            gray700: '#495057',
+            gray800: '#343a40',
+            gray900: '#212529',
+            happiness: '#FFD166',
+            romance: '#9381FF',
+            wisdom: '#6C757D',
+            confidence: '#06D6A0',
+            mystery: '#073B4C',
+            empathy: '#F8A4D8',
+            love: '#EF476F',
+            calmness: '#06D6A0'
+          },
+          fontFamily: {
+            sans: ['PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+            en: ['Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            'soft': '0 10px 30px rgba(0, 0, 0, 0.1)',
+            'hover': '0 15px 35px rgba(0, 0, 0, 0.15)',
+            'card': '0 2px 15px rgba(0, 0, 0, 0.08)',
+            'card-hover': '0 8px 25px rgba(0, 0, 0, 0.12)',
+            'glow': '0 0 20px rgba(39, 117, 187, 0.3)'
+          },
+          borderRadius: {
+            'xl': '12px',
+            '2xl': '16px',
+            '3xl': '20px'
+          }
+        }
+      }
+    }
+    // 多语言配置
+const langConfig = {
+  zh: {
+    // 导航栏
+    "nav.home": "首页",
+    "nav.products": "产品",
+    "nav.colors": "色彩",
+    "nav.technology": "技术",
+    "nav.about": "关于我们",
+    "nav.contact": "联系我们",
+    "nav.afterSales": "售后支持",
+    // 英雄区
+    "hero.title": "敏行无界 · 重新定义城市出行",
+    "hero.explore": "探索产品",
+    "hero.contact": "联系我们",
+    "hero.scroll": "SCROLL",
+    // 品牌简介
+    "about.title": "品牌简介",
+    "about.subtitle": "无锡大敏单车有限公司，融合时尚设计与骑行科技的创新企业",
+    "about.concept": "品牌理念",
+    "about.concept.desc1": "无锡大敏单车有限公司（简称\"大敏单车\"）成立于2025年，总部位于江苏省无锡市，是一家融合时尚设计与骑行科技的创新企业。",
+    "about.concept.desc2": "我们致力于为都市人群打造兼具设计感、趣味性与个性的微电动出行工具，重新定义城市出行的美学与体验。",
+    "about.team": "创始团队",
+    "about.team.desc": "团队由一群热爱城市文化、洞察潮流趋势的创造者组成。核心成员由毕业于伦敦时装学院的设计师与 e-bike 领域资深专家组成，携手拥有20年制造经验的合作伙伴，将创意落地为可信赖的时尚出行。",
+    "about.years": "制造经验",
+    "about.colors": "色彩系列",
+    "about.modes": "骑行模式",
+    // 产品概览
+    "products.title": "产品概览",
+    "products.subtitle": "两款核心产品，满足不同出行需求",
+    "products.toggle": "查看产品系列",
+    "products.standard": "标准版",
+    "products.pro": "长续航版",
+    "products.es": "ES 标准版",
+    "products.es-pro": "ES Pro 长续航版",
+    "products.battery": "续航",
+    "products.weight": "净重",
+    "products.speed": "最高速",
+    "products.brake": "刹车",
+    "products.spec": "详细参数",
+    "products.buy": "咨询购买",
+    "products.compare": "产品对比",
+    "products.feature": "特性",
+    "products.battery.capacity": "电池容量",
+    "products.range": "续航里程",
+    "products.power": "电机功率",
+    "products.brake.system": "刹车系统",
+    "products.net.weight": "净重",
+    // 色彩板块
+    "colors.title": "颜色&情绪色谱",
+    "colors.subtitle1": "色彩是你情绪的表达",
+    "colors.subtitle2": "在出行被数据与效率定义的今天，大敏选择回归人的情感本质。我们将八种深邃的情绪融入色彩设计，让每个颜色都成为你内心世界的外在延伸。",
+    "colors.happiness": "欢乐黄",
+    "colors.romance": "浪漫紫",
+    "colors.wisdom": "智慧灰",
+    "colors.confidence": "自信蓝",
+    "colors.mystery": "神秘黑",
+    "colors.empathy": "共情粉",
+    "colors.love": "挚爱红",
+    "colors.calmness": "平静绿"
+  },
+  en: {
+    // 导航栏
+    "nav.home": "Home",
+    "nav.products": "Products",
+    "nav.colors": "Colors",
+    "nav.technology": "Technology",
+    "nav.about": "About Us",
+    "nav.contact": "Contact Us",
+    "nav.afterSales": "After-sales Support",
+    // 英雄区
+    "hero.title": "Agile Ways, No Limits · Redefine Urban Mobility",
+    "hero.explore": "Explore Products",
+    "hero.contact": "Contact Us",
+    "hero.scroll": "SCROLL",
+    // 品牌简介
+    "about.title": "Brand Story",
+    "about.subtitle": "Wuxi Da Miin Bicycle Co., Ltd., an innovative enterprise integrating fashion design and cycling technology",
+    "about.concept": "Brand Concept",
+    "about.concept.desc1": "Wuxi Da Miin Bicycle Co., Ltd. (referred to as \"Da Miin\") was established in 2025, headquartered in Wuxi City, Jiangsu Province. It is an innovative enterprise integrating fashion design and cycling technology.",
+    "about.concept.desc2": "We are committed to creating micro electric mobility tools with design sense, fun and personality for urban people, redefining the aesthetics and experience of urban travel.",
+    "about.team": "Founding Team",
+    "about.team.desc": "The team consists of a group of creators who love urban culture and insight into trend trends. The core members are composed of designers graduated from London College of Fashion and senior experts in the e-bike field, working with partners with 20 years of manufacturing experience to turn creativity into reliable fashion travel.",
+    "about.years": "Manufacturing Experience",
+    "about.colors": "Color Series",
+    "about.modes": "Riding Modes",
+    // 产品概览
+    "products.title": "Product Overview",
+    "products.subtitle": "Two core products to meet different travel needs",
+    "products.toggle": "View Product Series",
+    "products.standard": "Standard Version",
+    "products.pro": "Long Range Version",
+    "products.es": "ES Standard Version",
+    "products.es-pro": "ES Pro Long Range Version",
+    "products.battery": "Range",
+    "products.weight": "Net Weight",
+    "products.speed": "Max Speed",
+    "products.brake": "Brake",
+    "products.spec": "Detailed Specs",
+    "products.buy": "Inquire & Buy",
+    "products.compare": "Product Comparison",
+    "products.feature": "Features",
+    "products.battery.capacity": "Battery Capacity",
+    "products.range": "Range",
+    "products.power": "Motor Power",
+    "products.brake.system": "Brake System",
+    "products.net.weight": "Net Weight",
+    // 色彩板块
+    "colors.title": "Color & Emotional",
+    "colors.subtitle1": "Color is the expression of your emotions",
+    "colors.subtitle2": "Today, when travel is defined by data and efficiency, Da Miin chooses to return to the emotional essence of people. We integrate eight profound emotions into color design, making each color an external extension of your inner world.",
+    "colors.happiness": "Happiness Yellow",
+    "colors.romance": "Romance Purple",
+    "colors.wisdom": "Wisdom Gray",
+    "colors.confidence": "Confidence Blue",
+    "colors.mystery": "Mystery Black",
+    "colors.empathy": "Empathy Pink",
+    "colors.love": "Love Red",
+    "colors.calmness": "Calmness Green"
+  }
+};
+
+// 全局当前语言
+let currentLang = localStorage.getItem('daMiinLang') || 'zh';
+
+// 更新页面文本
+function updatePageLang(lang) {
+  // 更新所有带data-lang-key的元素
+  document.querySelectorAll('[data-lang-key]').forEach(el => {
+    const key = el.getAttribute('data-lang-key');
+    if (langConfig[lang][key]) {
+      el.textContent = langConfig[lang][key];
+    }
+  });
+  
+  // 更新语言显示按钮文本
+  document.getElementById('currentLang').textContent = lang === 'zh' ? '中' : 'En';
+  document.getElementById('mobileCurrentLang').textContent = lang === 'zh' ? '中文' : 'English';
+  
+  // 保存到本地存储
+  localStorage.setItem('daMiinLang', lang);
+  currentLang = lang;
+}
+
+// 初始化语言
+function initLang() {
+  updatePageLang(currentLang);
+  
+  // 绑定桌面端语言切换事件
+  document.querySelectorAll('.lang-option').forEach(option => {
+    option.addEventListener('click', function(e) {
+      e.preventDefault();
+      const lang = this.getAttribute('data-lang');
+      updatePageLang(lang);
+      
+      // 关闭移动端语言下拉菜单
+      document.getElementById('mobileLangDropdown').classList.remove('active');
+      document.getElementById('mobileLangArrow').classList.remove('rotate-180');
+    });
+  });
+  
+  // 绑定移动端语言下拉按钮事件
+  document.getElementById('mobileLangBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    const dropdown = document.getElementById('mobileLangDropdown');
+    const arrow = document.getElementById('mobileLangArrow');
+    
+    dropdown.classList.toggle('active');
+    arrow.classList.toggle('rotate-180');
+  });
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', function() {
+  initLang();
+  
+  // 原有其他初始化逻辑（如AOS、导航栏滚动等）保持不变
+  AOS.init();
+  
+  // 导航栏滚动效果
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('nav-scrolled');
+    } else {
+      navbar.classList.remove('nav-scrolled');
+    }
+    
+    // 滚动进度条
+    const scrollProgress = document.getElementById('scrollProgress');
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    scrollProgress.style.width = scrolled + "%";
+  });
+  
+  // 产品折叠展开
+  const productToggleBtn = document.getElementById('productToggleBtn');
+  const productContent = document.getElementById('productContent');
+  const toggleIcon = document.getElementById('toggleIcon');
+  
+  productToggleBtn.addEventListener('click', function() {
+    productContent.classList.toggle('expanded');
+    toggleIcon.classList.toggle('rotate-180');
+    this.querySelector('span').textContent = productContent.classList.contains('expanded') 
+      ? (currentLang === 'zh' ? '收起产品系列' : 'Hide Product Series') 
+      : (currentLang === 'zh' ? '查看产品系列' : 'View Product Series');
+  });
+  
+  // 移动端菜单逻辑
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  
+  menuBtn.addEventListener('click', function() {
+    mobileMenu.classList.add('active');
+    mobileOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  closeBtn.addEventListener('click', closeMobileMenu);
+  mobileOverlay.addEventListener('click', closeMobileMenu);
+  
+  // 点击移动端菜单项后关闭菜单
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (this.getAttribute('href') !== '#') {
+        closeMobileMenu();
+      }
+    });
+  });
+});
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .bg-blur {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .transition-all-300 {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .grid-cols-4-responsive {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .product-card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .product-card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #2775BB 0%, #C41E24 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    
+    /* 全局样式 */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* 自定义滚动条 */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2775BB;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1c5a94;
+    }
+    
+    /* 导航栏滚动效果 */
+    .nav-scrolled {
+      background-color: rgba(17, 17, 17, 0.95) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+    }
+    
+    /* 表格样式 */
+    .spec-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s ease;
+    }
+    .spec-table tr:hover td {
+      background-color: #f8f9fa;
+    }
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+    .highlight-cell {
+      color: #C41E24;
+      font-weight: 600;
+    }
+    
+    /* 色块悬停效果 */
+    .color-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .color-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .color-card:hover::before {
+      left: 100%;
+    }
+    .color-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    /* 移动端汉堡菜单 */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+    
+    /* 移动端遮罩层 */
+    .mobile-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* 产品折叠展开动画 */
+    .product-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+    }
+    .product-content.expanded {
+      max-height: 3000px;
+      opacity: 1;
+      transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease 0.1s;
+    }
+    
+    /* 下拉菜单样式 */
+    .dropdown-content {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.95);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown-content.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    
+    /* 模态框样式 */
+    .modal {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      transform: translateY(-30px) scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modal.active .modal-content {
+      transform: translateY(0) scale(1);
+    }
+    
+    /* 轮播图样式 */
+    .carousel-item {
+      display: none;
+    }
+    .carousel-item.active {
+      display: block;
+    }
+    
+    /* 进度条 */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2775BB, #C41E24);
+      z-index: 100;
+      transition: width 0.1s ease;
+    }
+    
+    /* 按钮点击效果 */
+    .btn-press {
+      transition: transform 0.1s ease, box-shadow 0.2s ease;
+    }
+    .btn-press:active {
+      transform: scale(0.97);
+    }
+    
+    /* 输入框焦点效果 */
+    .input-glow:focus {
+      box-shadow: 0 0 0 3px rgba(39, 117, 187, 0.15);
+    }
+    
+    /* 图片悬浮效果 */
+    .img-zoom {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-zoom:hover {
+      transform: scale(1.05);
+    }
+    
+    /* 英雄区背景动画 */
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+    .animate-float {
+      animation: float 20s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: float 25s ease-in-out infinite;
+      animation-delay: -5s;
+    }
+    
+    /* 链接下划线动画 */
+    .link-underline {
+      position: relative;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2775BB;
+      transition: width 0.3s ease;
+    }
+    .link-underline:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gray100">
+  <!-- 滚动进度条 -->
+  <div class="scroll-progress" id="scrollProgress" style="width: 0%"></div>
+
+  <!-- 1. 顶部导航栏 - 优化版 -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-500">
+    <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between text-white transition-all duration-300">
+      <!-- Logo -->
+      <a href="#hero" class="text-2xl font-bold tracking-wider flex items-center group">
+        <span class="text-brandRed mr-1 group-hover:scale-110 transition-transform inline-block">Da</span> 
+        <span class="group-hover:text-gray-200 transition-colors">Miin</span>
+      </a>
+      
+      <!-- 桌面端导航 -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#hero" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.home">首页</a>
+        <a href="#products" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.products">产品</a>
+        <a href="#colors" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.colors">色彩</a>
+        <a href="#technology" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.technology">技术</a>
+        <a href="#about" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.about">关于我们</a>
+        <a href="#contact" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.contact">联系我们</a>
+        <!-- 售后链接 - 打开模态框 -->
+        <a href="#" id="afterSalesLink" class="link-underline hover:text-primary transition-colors font-medium py-1" data-lang-key="nav.after-sales">售后支持</a>
+      </nav>
+      
+      <!-- 语言切换下拉菜单 - 修复显示问题 -->
+      <div class="hidden md:block md:relative dropdown group">
+        <button class="px-4 py-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 bg-white/5 border border-white/10 hover:border-white/30">
+          <span id="currentLang" class="font-medium">中</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <!-- 下拉内容 - 优化样式 -->
+        <div class="dropdown-content absolute right-0 mt-2 w-28 bg-white rounded-xl shadow-xl z-10 border border-gray200 overflow-hidden">
+          <a href="#" class="block px-4 py-3 text-gray800 hover:bg-primary hover:text-white lang-option transition-colors font-medium" data-lang="zh">中文</a>
+          <a href="#" class="block px-4 py-3 text-gray800 hover:bg-primary hover:text-white lang-option transition-colors font-medium" data-lang="en">English</a>
+        </div>
+      </div>
+      
+      <!-- 移动端汉堡按钮 - 优化版 -->
+      <button id="menuBtn" class="md:hidden text-white text-xl w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press border border-white/10">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- 移动端遮罩层 -->
+    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/60 z-40 md:hidden backdrop-blur-sm"></div>
+    
+    <!-- 移动端菜单 - 优化版 -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-gray900/98 bg-blur p-8 z-50 shadow-2xl border-l border-white/10">
+      <button id="closeBtn" class="absolute top-6 right-6 text-white text-lg w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="mt-16 flex flex-col space-y-1 text-white">
+        <a href="#hero" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-home w-5 text-center text-primary"></i> 首页
+        </a>
+        <a href="#products" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-bicycle w-5 text-center text-primary"></i> 产品
+        </a>
+        <a href="#colors" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-palette w-5 text-center text-primary"></i> 色彩
+        </a>
+        <a href="#technology" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-cogs w-5 text-center text-primary"></i> 技术
+        </a>
+        <a href="#about" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-info-circle w-5 text-center text-primary"></i> 关于我们
+        </a>
+        <a href="#contact" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-phone w-5 text-center text-primary"></i> 联系我们
+        </a>
+        <a href="#" id="mobileAfterSalesLink" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5">
+          <i class="fas fa-headset w-5 text-center text-primary"></i> 售后支持
+        </a>
+        <!-- 移动端语言切换 - 优化版 -->
+        <div class="relative dropdown mt-6 border-t border-white/10 pt-6 px-4">
+          <button id="mobileLangBtn" class="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition-colors w-full justify-start bg-white/5 border border-white/10">
+            <i class="fas fa-globe w-5 text-center text-primary"></i>
+            <span id="mobileCurrentLang">中文</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-auto transition-transform" id="mobileLangArrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobileLangDropdown" class="dropdown-content absolute left-4 right-4 mt-2 bg-white rounded-xl shadow-xl z-10 border border-gray200 overflow-hidden">
+            <a href="#" class="block px-4 py-3 text-gray800 hover:bg-primary hover:text-white lang-option transition-colors font-medium" data-lang="zh">中文</a>
+            <a href="#" class="block px-4 py-3 text-gray800 hover:bg-primary hover:text-white lang-option transition-colors font-medium" data-lang="en">English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 英雄区 - 参考网站优化版 -->
+  <section id="hero" class="h-screen flex items-center justify-center bg-gradient-to-br from-gray900 via-dark to-primary relative overflow-hidden">
+    <!-- 背景装饰 - 添加动画 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brandRed/20 rounded-full blur-3xl animate-float-delayed"></div>
+      <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" style="animation-delay: -10s;"></div>
+    </div>
+    
+    <!-- 网格纹理叠加 -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    
+    <div class="container mx-auto px-4 text-center text-white z-10 relative">
+      <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-bold mb-6 text-shadow-lg tracking-tight" data-aos="fade-up" data-aos-duration="1200">
+        Agile Ways, No Limits
+      </h1>
+      <p class="text-[clamp(1.2rem,3vw,1.8rem)] mb-10 opacity-90 font-light tracking-wide" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">
+        敏行无界 · 重新定义城市出行
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200">
+        <a href="#products" class="btn-press inline-block px-8 py-3.5 bg-brandRed rounded-full text-white font-medium hover:bg-brandRed/90 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-brandRed/30 border border-brandRed">
+          探索产品
+        </a>
+        <a href="#contact" class="btn-press inline-block px-8 py-3.5 bg-white/10 border border-white/30 rounded-full text-white font-medium hover:bg-white/20 transition-all transform hover:-translate-y-1 shadow-lg backdrop-blur-sm">
+          联系我们
+        </a>
+      </div>
+      
+      <!-- 滚动提示 - 优化动画 -->
+      <div class="absolute -bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-white/80 hover:text-white transition-colors flex flex-col items-center gap-2 group">
+          <span class="text-xs tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">SCROLL</span>
+          <i class="fas fa-chevron-down text-xl"></i>
+        </a>
+      </div>
+    </div>
+    <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
+  </section>
+
+  <!-- 2. 品牌简介 - 参考网站优化版 -->
+  <section id="about" class="py-24 bg-white relative overflow-hidden">
+    <!-- 背景装饰 -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gray100/50 to-transparent pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 md:px-8 relative">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="about.title">品牌简介 <span class="font-en text-primary">Brand Story</span></h2>
+        <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg" data-lang-key="about.description">
+          无锡大敏单车有限公司，融合时尚设计与骑行科技的创新企业
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- 左侧图片 - 优化样式 -->
+        <div class="rounded-2xl overflow-hidden shadow-soft group" data-aos="fade-right">
+          <!-- <img src="https://imgchr.com/i/pe2yAU0" alt="大敏单车品牌形象" > -->
+          <a href="https://imgchr.com/i/pe2yAU0"><img src="https://s41.ax1x.com/2026/04/22/pe2yAU0.jpg" alt="pe2yAU0.jpg" alt="大敏单车品牌形象" class="w-full h-auto object-cover img-zoom"/></a>
+        </div>
+        
+        <!-- 右侧文字 - 优化排版 -->
+        <div data-aos="fade-left">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+              <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                <i class="fas fa-building"></i>
+              </span>
+              品牌理念
+            </h3>
+            <p class="mb-4 text-lg leading-relaxed text-gray700">
+              无锡大敏单车有限公司（简称"大敏单车"）成立于2025年，总部位于江苏省无锡市，是一家融合时尚设计与骑行科技的创新企业。
+            </p>
+            <p class="text-lg leading-relaxed text-gray700">
+              我们致力于为都市人群打造兼具设计感、趣味性与个性的微电动出行工具，重新定义城市出行的美学与体验。
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+              <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                <i class="fas fa-users"></i>
+              </span>
+              创始团队
+            </h3>
+            <p class="text-lg leading-relaxed text-gray700">
+              团队由一群热爱城市文化、洞察潮流趋势的创造者组成。核心成员由毕业于伦敦时装学院的设计师与 e-bike 领域资深专家组成，携手拥有20年制造经验的合作伙伴，将创意落地为可信赖的时尚出行。
+            </p>
+          </div>
+          
+          <!-- 品牌优势数字卡片 - 优化 -->
+          <div class="grid grid-cols-3 gap-4 mt-10">
+            <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default">
+              <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors">20+</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors">制造经验</div>
+            </div>
+            <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default">
+              <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors">8</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors">色彩系列</div>
+            </div>
+            <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default">
+              <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors">3</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors">骑行模式</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 产品概览 - 参考网站优化版 -->
+  <section id="products" class="py-24 bg-lightGray relative">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">产品概览 <span class="font-en text-primary">Product Overview</span></h2>
+        <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">
+          两款核心产品，满足不同出行需求
+        </p>
+      </div>
+      
+      <!-- 产品折叠按钮 - 优化样式 -->
+      <div class="text-center mb-12" data-aos="fade-up">
+        <button id="productToggleBtn" class="btn-press px-8 py-3.5 bg-primary rounded-full text-white font-medium hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30 flex items-center gap-2 mx-auto group border border-primary">
+          <span data-lang-key="products.toggle">查看产品系列</span>
+          <svg id="toggleIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 产品内容 (默认收起) -->
+      <div id="productContent" class="product-content">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- ES 标准版 - 优化卡片样式 -->
+          <div class="bg-white rounded-2xl shadow-card product-card-hover overflow-hidden relative group" data-aos="fade-up" data-aos-delay="100">
+            <!-- 产品标签 -->
+            <div class="bg-primary text-white px-4 py-1.5 inline-block absolute top-4 left-4 rounded-lg text-sm font-medium z-10 shadow-lg">
+              标准版
+            </div>
+            
+            <!-- 产品图片 -->
+            <div class="h-72 overflow-hidden relative">
+              <!-- <img src="/mnt/agents/upload/mmexport1776752975185.jpg" alt="ES 标准版" class="w-full h-full object-cover img-zoom"> -->
+              <a href="https://imgchr.com/i/pe2yOsJ"><img src="https://s41.ax1x.com/2026/04/22/pe2yOsJ.jpg" alt="ES 标准版" class="w-full h-full object-cover img-zoom" /></a>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            
+            <!-- 产品信息 -->
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4 text-center">ES 标准版</h3>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-battery-full text-primary w-5 text-center"></i>
+                  <span class="text-sm font-medium">15-20KM 续航</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-weight text-primary w-5 text-center"></i>
+                  <span class="text-sm font-medium">14.5kg 净重</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-tachometer-alt text-primary w-5 text-center"></i>
+                  <span class="text-sm font-medium">25km/h 最高速</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-shield-alt text-primary w-5 text-center"></i>
+                  <span class="text-sm font-medium">后碟刹</span>
+                </div>
+              </div>
+              
+              <!-- 操作按钮 -->
+              <div class="flex gap-3">
+                <button class="view-spec-btn flex-1 px-6 py-3 bg-primary/5 text-primary rounded-xl hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2 font-medium border border-primary/20 hover:border-primary btn-press" data-product="es">
+                  <i class="fas fa-list-ul"></i> 详细参数
+                </button>
+                <a href="#contact" class="flex-1 px-6 py-3 bg-brandRed text-white rounded-xl hover:bg-brandRed/90 transition-all flex items-center justify-center gap-2 font-medium btn-press shadow-lg shadow-brandRed/20">
+                  <i class="fas fa-shopping-cart"></i> 咨询购买
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- ES Pro 长续航版 - 优化卡片样式 -->
+          <div class="bg-white rounded-2xl shadow-card product-card-hover overflow-hidden relative group" data-aos="fade-up" data-aos-delay="200">
+            <!-- 产品标签 -->
+            <div class="bg-brandRed text-white px-4 py-1.5 inline-block absolute top-4 left-4 rounded-lg text-sm font-medium z-10 shadow-lg">
+              长续航版
+            </div>
+            
+            <!-- 产品图片 -->
+            <div class="h-72 overflow-hidden relative">
+              <!-- <img src="/mnt/agents/upload/mmexport1776752975185.jpg" alt="ES Pro 长续航版" class="w-full h-full object-cover img-zoom"> -->
+              <a href="https://imgchr.com/i/pe2ybzF"><img src="https://s41.ax1x.com/2026/04/22/pe2ybzF.jpg" class="w-full h-full object-cover img-zoom" /></a>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            
+            <!-- 产品信息 -->
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4 text-center">ES Pro 长续航版</h3>
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-battery-full text-brandRed w-5 text-center"></i>
+                  <span class="text-sm font-medium">30-35KM 续航</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-weight text-brandRed w-5 text-center"></i>
+                  <span class="text-sm font-medium">15.5kg 净重</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-tachometer-alt text-brandRed w-5 text-center"></i>
+                  <span class="text-sm font-medium">25km/h 最高速</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray700 bg-lightGray p-3 rounded-lg">
+                  <i class="fas fa-shield-alt text-brandRed w-5 text-center"></i>
+                  <span class="text-sm font-medium">前后双碟刹</span>
+                </div>
+              </div>
+              
+              <!-- 操作按钮 -->
+              <div class="flex gap-3">
+                <button class="view-spec-btn flex-1 px-6 py-3 bg-brandRed/5 text-brandRed rounded-xl hover:bg-brandRed hover:text-white transition-all flex items-center justify-center gap-2 font-medium border border-brandRed/20 hover:border-brandRed btn-press" data-product="es-pro">
+                  <i class="fas fa-list-ul"></i> 详细参数
+                </button>
+                <a href="#contact" class="flex-1 px-6 py-3 bg-brandRed text-white rounded-xl hover:bg-brandRed/90 transition-all flex items-center justify-center gap-2 font-medium btn-press shadow-lg shadow-brandRed/20">
+                  <i class="fas fa-shopping-cart"></i> 咨询购买
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 产品对比表格 - 新增 -->
+        <div class="mt-16 bg-white rounded-2xl shadow-card p-8 border border-gray200" data-aos="fade-up">
+          <h3 class="text-xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+            <i class="fas fa-balance-scale text-primary"></i>
+            产品对比 <span class="font-en text-primary">Comparison</span>
+          </h3>
+          <div class="overflow-x-auto rounded-xl border border-gray200">
+            <table class="w-full spec-table">
+              <thead>
+                <tr class="bg-lightGray">
+                  <th class="px-6 py-4 text-left font-bold text-gray800">特性</th>
+                  <th class="px-6 py-4 text-left font-bold text-gray800">ES 标准版</th>
+                  <th class="px-6 py-4 text-left font-bold text-gray800">ES Pro 长续航版</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray100">
+                  <td class="font-medium text-gray700">电池容量</td>
+                  <td>144WH 36V 4Ah</td>
+                  <td class="highlight-cell">144WH 36V 4Ah 长续航</td>
+                </tr>
+                <tr class="border-b border-gray100">
+                  <td class="font-medium text-gray700">续航里程</td>
+                  <td>15~20KM</td>
+                  <td class="highlight-cell">30~35KM</td>
+                </tr>
+                <tr class="border-b border-gray100">
+                  <td class="font-medium text-gray700">电机功率</td>
+                  <td>250W</td>
+                  <td class="highlight-cell">350W</td>
+                </tr>
+                <tr class="border-b border-gray100">
+                  <td class="font-medium text-gray700">刹车系统</td>
+                  <td>后碟刹</td>
+                  <td class="highlight-cell">前后双碟刹</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-gray700">净重</td>
+                  <td>14.5kg</td>
+                  <td>15.5kg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 颜色与情绪色谱 - 参考网站优化版 -->
+  <section id="colors" class="py-24 bg-dark text-white relative overflow-hidden">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(39,117,187,0.1),transparent_70%)]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 md:px-8 relative">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">颜色&情绪色谱 <span class="font-en text-primary">Color & Emotional</span></h2>
+        <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
+        <p class="text-xl text-center mb-6 opacity-90 font-light" data-aos="fade-up" data-aos-delay="100">
+          色彩是你情绪的表达
+        </p>
+        <p class="text-center max-w-3xl mx-auto mb-16 opacity-70 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+          在出行被数据与效率定义的今天，大敏选择回归人的情感本质。我们将八种深邃的情绪融入色彩设计，让每个颜色都成为你内心世界的外在延伸。
+        </p>
+      </div>
+      
+      <!-- 色彩网格 - 优化布局和样式 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- 欢乐黄 -->
+        <div class="color-card bg-happiness/10 rounded-2xl p-6 text-center border border-happiness/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-happiness flex items-center justify-center text-4xl shadow-lg ring-4 ring-happiness/20 transition-transform duration-300 hover:scale-110">😊</div>
+          <h3 class="text-xl font-bold mb-2">Happiness</h3>
+          <p class="text-happiness font-medium">欢乐黄</p>
+        </div>
+        
+        <!-- 浪漫紫 -->
+        <div class="color-card bg-romance/10 rounded-2xl p-6 text-center border border-romance/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-romance flex items-center justify-center text-4xl shadow-lg ring-4 ring-romance/20 transition-transform duration-300 hover:scale-110">💜</div>
+          <h3 class="text-xl font-bold mb-2">Romance</h3>
+          <p class="text-romance font-medium">浪漫紫</p>
+        </div>
+        
+        <!-- 智慧灰 -->
+        <div class="color-card bg-wisdom/10 rounded-2xl p-6 text-center border border-wisdom/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-wisdom flex items-center justify-center text-4xl shadow-lg ring-4 ring-wisdom/20 transition-transform duration-300 hover:scale-110">🧠</div>
+          <h3 class="text-xl font-bold mb-2">Wisdom</h3>
+          <p class="text-wisdom font-medium">智慧灰</p>
+        </div>
+        
+        <!-- 自信蓝 -->
+        <div class="color-card bg-confidence/10 rounded-2xl p-6 text-center border border-confidence/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-confidence flex items-center justify-center text-4xl shadow-lg ring-4 ring-confidence/20 transition-transform duration-300 hover:scale-110">💪</div>
+          <h3 class="text-xl font-bold mb-2">Confidence</h3>
+          <p class="text-confidence font-medium">自信蓝</p>
+        </div>
+        
+        <!-- 神秘黑 -->
+        <div class="color-card bg-mystery/10 rounded-2xl p-6 text-center border border-mystery/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="500">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-mystery flex items-center justify-center text-4xl shadow-lg ring-4 ring-mystery/20 transition-transform duration-300 hover:scale-110">🖤</div>
+          <h3 class="text-xl font-bold mb-2">Mystery</h3>
+          <p class="text-mystery font-medium">神秘黑</p>
+        </div>
+        
+        <!-- 共情粉 -->
+        <div class="color-card bg-empathy/10 rounded-2xl p-6 text-center border border-empathy/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="600">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-empathy flex items-center justify-center text-4xl shadow-lg ring-4 ring-empathy/20 transition-transform duration-300 hover:scale-110">🥰</div>
+          <h3 class="text-xl font-bold mb-2">Empathy</h3>
+          <p class="text-empathy font-medium">共情粉</p>
+        </div>
+        
+        <!-- 挚爱红 -->
+        <div class="color-card bg-love/10 rounded-2xl p-6 text-center border border-love/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="700">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-love flex items-center justify-center text-4xl shadow-lg ring-4 ring-love/20 transition-transform duration-300 hover:scale-110">❤️</div>
+          <h3 class="text-xl font-bold mb-2">Love</h3>
+          <p class="text-love font-medium">挚爱红</p>
+        </div>
+        
+        <!-- 平静绿 -->
+        <div class="color-card bg-calmness/10 rounded-2xl p-6 text-center border border-calmness/20 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="800">
+          <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-calmness flex items-center justify-center text-4xl shadow-lg ring-4 ring-calmness/20 transition-transform duration-300 hover:scale-110">🧘</div>
+          <h3 class="text-xl font-bold mb-2">Calmness</h3>
+          <p class="text-calmness font-medium">平静绿</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 产品核心技术与亮点 - 参考网站优化版 -->
+  <section id="technology" class="py-24 bg-white relative">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">核心技术 <span class="font-en text-primary">Core Technology</span></h2>
+        <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">
+          创新科技，打造卓越骑行体验
+        </p>
+      </div>
+      
+      <!-- 核心技术 - 优化布局 -->
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <!-- 极简设计 -->
+        <div class="bg-lightGray rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <i class="fas fa-pencil-ruler"></i>
+          </div>
+          <div class="rounded-xl overflow-hidden mb-6 h-48">
+            <!-- <img src="/mnt/agents/upload/mmexport1776752972587.jpg" alt="极简设计" class="w-full h-full object-cover img-zoom"> -->
+            <a href="https://imgchr.com/i/pe2yZCT"><img src="https://s41.ax1x.com/2026/04/22/pe2yZCT.md.jpg" alt="极简设计" class="w-full h-full object-cover img-zoom" /></a>
+          </div>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">极简设计</h3>
+          <p class="text-gray700 leading-relaxed">采用无链条+无脚踏纯电驱动设计，整车结构更简洁，外观更具未来感</p>
+        </div>
+        
+        <!-- 智能动力 -->
+        <div class="bg-lightGray rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="rounded-xl overflow-hidden mb-6 h-48">
+            <!-- <i class="fas fa-cogs text-primary/80"></i> -->
+            <a href="https://imgchr.com/i/pe2yZCT"><img src="https://s41.ax1x.com/2026/04/22/pe2yZCT.md.jpg" alt="极简设计" class="w-full h-full object-cover img-zoom" /></a>
+          </div>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">智能动力</h3>
+          <p class="text-gray700 leading-relaxed">通过电控系统精准调控动力输出，从起步到加速全程流畅，骑行更轻松</p>
+        </div>
+        
+        <!-- 全球定位系统 -->
+        <div class="bg-lightGray rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="rounded-xl overflow-hidden mb-6 h-48">
+            <!-- <i class="fas fa-cogs text-primary/80"></i> -->
+            <a href="https://imgchr.com/i/pe2yZCT"><img src="https://s41.ax1x.com/2026/04/22/pe2yZCT.md.jpg" alt="极简设计" class="w-full h-full object-cover img-zoom" /></a>
+          </div>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">全球定位系统</h3>
+          <p class="text-gray700 leading-relaxed">搭载全球定位系统与专属 APP，结合蓝牙+双模定位，实时寻车，防盗无忧</p>
+        </div>
+      </div>
+      
+      <!-- 产品亮点 - 优化布局 -->
+      <div>
+        <h3 class="text-2xl font-bold mb-8 text-center" data-aos="fade-up">
+          产品亮点 <span class="font-en text-primary">Product Highlights</span>
+        </h3>
+        
+        <!-- 三种模式 - 优化样式 -->
+        <div class="bg-lightGray rounded-2xl p-8 shadow-card mb-12 border border-gray200" data-aos="fade-up">
+          <h4 class="text-xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+            <i class="fas fa-layer-group text-primary"></i>
+            三种模式随心选择
+          </h4>
+          <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
+              <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
+                <i class="fas fa-walking"></i>
+              </div>
+              <h4 class="text-lg font-bold mb-2">S 步行模式</h4>
+              <p class="text-primary text-2xl font-bold">13km/h</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
+              <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
+                <i class="fas fa-bicycle"></i>
+              </div>
+              <h4 class="text-lg font-bold mb-2">S 常规模式</h4>
+              <p class="text-primary text-2xl font-bold">18km/h</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
+              <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4 class="text-lg font-bold mb-2">S 高速模式</h4>
+              <p class="text-primary text-2xl font-bold">25km/h</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 8个特性图标网格 - 优化样式 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up">
+          <!-- 极致轻量 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-weight"></i></div>
+            <h4 class="font-bold mb-2">极致轻量</h4>
+            <p class="text-sm text-gray700">ES 14.5kg / ES Pro 15.5kg</p>
+          </div>
+          
+          <!-- 20inch -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-circle"></i></div>
+            <h4 class="font-bold mb-2">20inch</h4>
+            <p class="text-sm text-gray700">20寸大轮毂</p>
+          </div>
+          
+          <!-- 氛围灯 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-lightbulb"></i></div>
+            <h4 class="font-bold mb-2">氛围灯</h4>
+            <p class="text-sm text-gray700">时尚氛围灯，让骑行更有仪式感</p>
+          </div>
+          
+          <!-- 脚踏 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-shoe-prints"></i></div>
+            <h4 class="font-bold mb-2">脚踏</h4>
+            <p class="text-sm text-gray700">可折叠脚踏设计，收纳尺寸更小</p>
+          </div>
+          
+          <!-- 全速续航 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-battery-three-quarters"></i></div>
+            <h4 class="font-bold mb-2">全速续航</h4>
+            <p class="text-sm text-gray700">侧取锂电池，ES 15-20km / ES Pro 30-35km</p>
+          </div>
+          
+          <!-- 充电 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-charging-station"></i></div>
+            <h4 class="font-bold mb-2">充电</h4>
+            <p class="text-sm text-gray700">符合新国标充电口</p>
+          </div>
+          
+          <!-- 快拆 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-tools"></i></div>
+            <h4 class="font-bold mb-2">快拆</h4>
+            <p class="text-sm text-gray700">一步转动车把，可放进后备箱</p>
+          </div>
+          
+          <!-- 机械碟刹 -->
+          <div class="bg-lightGray rounded-2xl p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
+            <div class="text-4xl mb-4 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-stop"></i></div>
+            <h4 class="font-bold mb-2">机械碟刹</h4>
+            <p class="text-sm text-gray700">ES 单碟刹片后 / ES Pro 双碟刹片前后</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 联系我们 - 新增板块 -->
+  <section id="contact" class="py-24 bg-lightGray relative">
+    <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-white via-transparent to-white/50"></div>
+    <div class="container mx-auto px-4 md:px-8 relative">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">联系我们 <span class="font-en text-primary">Contact Us</span></h2>
+        <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">
+          无论您有任何问题或需求，我们都将竭诚为您服务
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- 联系信息 -->
+        <div class="bg-white rounded-2xl p-8 shadow-card border border-gray200 hover:shadow-hover transition-shadow duration-300" data-aos="fade-right">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+            <span class="w-10 h-10 bg-brandRed/10 rounded-lg flex items-center justify-center text-brandRed">
+              <i class="fas fa-address-card"></i>
+            </span>
+            联系信息
+          </h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mt-1 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <i class="fas fa-map-marker-alt text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1 text-gray800">公司地址</h4>
+                <p class="text-gray700">江苏省无锡市XXX区XXX路XXX号</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mt-1 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <i class="fas fa-phone text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1 text-gray800">联系电话</h4>
+                <p class="text-gray700">徐女士：13771255743</p>
+                <p class="text-gray600 text-sm">工作时间：9:00-18:00</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mt-1 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <i class="fas fa-envelope text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1 text-gray800">电子邮箱</h4>
+                <p class="text-gray700">service@damiin.com</p>
+                <p class="text-gray700">sales@damiin.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4 group">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mt-1 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <i class="fab fa-weixin text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1 text-gray800">微信公众号</h4>
+                <div class="w-40 h-40 bg-lightGray rounded-xl flex items-center justify-center text-gray500 mt-2 border-2 border-dashed border-gray300">
+                  <div class="text-center">
+                    <i class="fas fa-qrcode text-3xl mb-2 text-gray400"></i>
+                    <p class="text-sm">公众号二维码</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 社交媒体 -->
+          <div class="mt-10 pt-6 border-t border-gray200">
+            <h4 class="font-bold mb-4 text-gray800">关注我们</h4>
+            <div class="flex gap-3">
+              <a href="#" class="w-11 h-11 bg-[#E4405F]/10 rounded-xl flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-all duration-300 btn-press">
+                <i class="fab fa-instagram text-lg"></i>
+              </a>
+              <a href="#" class="w-11 h-11 bg-[#0088CC]/10 rounded-xl flex items-center justify-center text-[#0088CC] hover:bg-[#0088CC] hover:text-white transition-all duration-300 btn-press">
+                <i class="fab fa-weibo text-lg"></i>
+              </a>
+              <a href="#" class="w-11 h-11 bg-[#FF2442]/10 rounded-xl flex items-center justify-center text-[#FF2442] hover:bg-[#FF2442] hover:text-white transition-all duration-300 btn-press">
+                <i class="fab fa-xiaohongshu text-lg"></i>
+              </a>
+              <a href="#" class="w-11 h-11 bg-[#1296DB]/10 rounded-xl flex items-center justify-center text-[#1296DB] hover:bg-[#1296DB] hover:text-white transition-all duration-300 btn-press">
+                <i class="fab fa-weixin text-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 留言表单 -->
+        <div class="bg-white rounded-2xl p-8 shadow-card border border-gray200 hover:shadow-hover transition-shadow duration-300" data-aos="fade-left">
+          <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+            <span class="w-10 h-10 bg-brandRed/10 rounded-lg flex items-center justify-center text-brandRed">
+              <i class="fas fa-paper-plane"></i>
+            </span>
+            在线留言
+          </h3>
+          
+          <form id="form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="group">
+                <label class="block text-gray700 mb-2 font-medium text-sm" for="name">姓名</label>
+                <div class="relative">
+                  <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
+                  <input type="text" id="name" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow" placeholder="请输入您的姓名" required>
+                </div>
+              </div>
+              <div class="group">
+                <label class="block text-gray700 mb-2 font-medium text-sm" for="phone">电话</label>
+                <div class="relative">
+                  <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
+                  <input type="tel" id="phone" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow" placeholder="请输入您的联系电话" required>
+                </div>
+              </div>
+            </div>
+            
+            <div class="group">
+              <label class="block text-gray700 mb-2 font-medium text-sm" for="email">电子邮箱</label>
+              <div class="relative">
+                <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
+                <input type="email" id="email" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow" placeholder="请输入您的电子邮箱">
+              </div>
+            </div>
+            
+            <button type="submit" class="w-full px-6 py-3.5 bg-brandRed text-white rounded-xl hover:bg-brandRed/90 transition-all flex items-center justify-center gap-2 font-medium btn-press shadow-lg shadow-brandRed/20 mt-8">
+              <i class="fas fa-paper-plane"></i> 提交信息
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 页脚 Footer - 优化版 -->
+  <footer class="bg-dark text-white pt-20 pb-8 relative overflow-hidden">
+    <!-- 顶部装饰线 -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-brandRed to-primary"></div>
+    
+    <div class="container mx-auto px-4 md:px-8">
+      <!-- 上部：四列布局 -->
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <!-- 品牌信息 -->
+        <div>
+          <div class="text-2xl font-bold mb-6 flex items-center">
+            <span class="text-brandRed mr-1">Da</span> 
+            <span>Miin</span>
+          </div>
+          <p class="text-gray400 mb-6 leading-relaxed">
+            敏行无界 · 重新定义城市出行
+          </p>
+          <div class="flex gap-3">
+             <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary transition-all duration-300 btn-press">
+              <i class="fab fa-weixin"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-[#FF2442] transition-all duration-300 btn-press">
+              <i class="fab fa-xiaohongshu"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-[#E6162D] transition-all duration-300 btn-press">
+              <i class="fab fa-weibo"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- 快速链接 -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 pb-3 border-b border-white/10">快速链接</h4>
+          <ul class="space-y-3">
+            <li><a href="#hero" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">首页</a></li>
+            <li><a href="#products" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">产品中心</a></li>
+            <li><a href="#technology" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">核心技术</a></li>
+            <li><a href="#about" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">关于我们</a></li>
+            <li><a href="#contact" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">联系我们</a></li>
+          </ul>
+        </div>
+        
+        <!-- 售后服务 -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 pb-3 border-b border-white/10">售后服务</h4>
+          <ul class="space-y-3">
+            <li><a href="#" id="footerAfterSalesBtn" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">使用说明</a></li>
+            <li><a href="#" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">保修政策</a></li>
+            <li><a href="#" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">常见问题</a></li>
+            <li><a href="#" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">维修网点</a></li>
+            <li><a href="#" class="text-gray400 hover:text-white transition-colors hover:translate-x-1 inline-block">投诉建议</a></li>
+          </ul>
+        </div>
+        
+        <!-- 联系方式 -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 pb-3 border-b border-white/10">联系方式</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 group">
+              <i class="fas fa-map-marker-alt text-brandRed mt-1 group-hover:scale-110 transition-transform"></i>
+              <span class="text-gray400">江苏省无锡市XXX区XXX路XXX号</span>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <i class="fas fa-phone text-brandRed mt-1 group-hover:scale-110 transition-transform"></i>
+              <span class="text-gray400">13771255743</span>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <i class="fas fa-envelope text-brandRed mt-1 group-hover:scale-110 transition-transform"></i>
+              <span class="text-gray400">service@damiin.com</span>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <i class="fas fa-clock text-brandRed mt-1 group-hover:scale-110 transition-transform"></i>
+              <span class="text-gray400">9:00-18:00 (全年无休)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 中部：二维码区域 -->
+      <div class="grid md:grid-cols-3 gap-8 mb-12 pt-10 border-t border-white/10">
+        <!-- 小程序 -->
+        <div class="text-center group">
+          <div class="w-40 h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center">
+              <i class="fas fa-qrcode text-4xl mb-2 text-gray400"></i>
+              <p class="text-sm font-medium">小程序二维码</p>
+            </div>
+          </div>
+          <p class="font-medium">关注小程序</p>
+          <p class="text-sm opacity-70">福利抢先领，优惠不错过</p>
+        </div>
+        
+        <!-- 小红书 -->
+        <div class="text-center group">
+          <div class="w-40 h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center">
+              <i class="fas fa-qrcode text-4xl mb-2 text-gray400"></i>
+              <p class="text-sm font-medium">小红书二维码</p>
+            </div>
+          </div>
+          <p class="font-medium">关注小红书</p>
+          <p class="text-sm opacity-70">随时查看最新动态</p>
+        </div>
+        
+        <!-- 企业微信 -->
+        <div class="text-center group">
+          <div class="w-40 h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center">
+              <i class="fas fa-qrcode text-4xl mb-2 text-gray400"></i>
+              <p class="text-sm font-medium">企业微信二维码</p>
+            </div>
+          </div>
+          <p class="font-medium">关注企业微信</p>
+          <p class="text-sm opacity-70">咨询更便捷，服务更贴心</p>
+        </div>
+      </div>
+      
+      <!-- 底部红色条带 -->
+      <div class="bg-brandRed py-5 rounded-2xl mb-8 shadow-lg shadow-brandRed/20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p class="text-lg font-bold tracking-wide">大敏单车</p>
+          <p class="font-en text-white/90 tracking-wider">Agile Ways, No Limits | 敏行无界</p>
+        </div>
+      </div>
+      
+      <!-- 版权信息 -->
+      <div class="text-center text-sm opacity-60 pt-6 border-t border-white/10">
+        <p>© 2025 Da Miin 大敏单车 版权所有 | 总部：江苏省无锡市 | 苏ICP备XXXXXXXX号</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 产品参数模态框 - 优化版 -->
+  <div id="specModal" class="modal fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray200">
+      <!-- 模态框头部 -->
+      <div class="p-6 border-b border-gray200 flex justify-between items-center sticky top-0 bg-white z-10 rounded-t-2xl">
+        <h3 id="modalTitle" class="text-2xl font-bold flex items-center gap-2">
+          <i class="fas fa-clipboard-list text-primary"></i>
+          产品详细参数
+        </h3>
+        <button id="closeModalBtn" class="text-gray500 hover:text-gray700 text-xl w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray100 transition-all btn-press">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <!-- 模态框内容 -->
+      <div id="modalContent" class="p-6">
+        <!-- 参数内容将通过JS动态填充 -->
+      </div>
+      
+      <!-- 模态框底部 -->
+      <div class="p-6 border-t border-gray200 flex justify-end gap-3 sticky bottom-0 bg-white rounded-b-2xl">
+        <a href="#contact" class="px-6 py-2.5 bg-gray100 text-gray800 rounded-xl hover:bg-gray200 transition-all btn-press font-medium" onclick="closeSpecModal()">
+          咨询购买
+        </a>
+        <button id="closeModalBtn2" class="px-6 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all btn-press font-medium">
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 售后说明模态框 - 优化版 -->
+  <div id="afterSalesModal" class="modal fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="modal-content bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-gray200">
+      <!-- 模态框头部 -->
+      <div class="p-6 border-b border-gray200 flex justify-between items-center sticky top-0 bg-white z-10 rounded-t-2xl">
+        <h3 class="text-2xl font-bold flex items-center gap-2">
+          <i class="fas fa-headset text-primary"></i>
+          使用说明及售后保障
+        </h3>
+        <button id="closeAfterSalesBtn" class="text-gray500 hover:text-gray700 text-xl w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray100 transition-all btn-press">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <!-- 模态框内容 - 优化排版 -->
+      <div class="p-6 space-y-8">
+        <div>
+          <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray800">
+            <span class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary text-sm">
+              <i class="fas fa-book"></i>
+            </span>
+            产品使用说明
+          </h4>
+          <div class="bg-lightGray rounded-xl p-6 border border-gray200">
+            <ul class="space-y-3 text-gray700">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>首次使用前请确保电池充满电，充电时间建议不少于2小时</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>使用前检查刹车系统、轮胎气压是否正常，确保安全骑行</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>请在规定载重范围内（100kg）使用，避免超载影响安全</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>充电时请使用原装充电器，避免使用非正规充电设备</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>避免在雨天长时间骑行，涉水深度不超过轮毂1/3高度</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>定期检查螺丝紧固情况，建议每月进行一次全面检查</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check-circle text-primary mt-1 text-sm"></i>
+                <span>长时间不使用时，请将电池电量保持在50%左右，每月补充一次电</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray800">
+            <span class="w-8 h-8 bg-brandRed/10 rounded-lg flex items-center justify-center text-brandRed text-sm">
+              <i class="fas fa-shield-alt"></i>
+            </span>
+            售后服务政策
+          </h4>
+          <div class="bg-lightGray rounded-xl p-6 border border-gray200">
+            <p class="mb-4 text-gray700">我们承诺为所有大敏单车产品提供优质的售后服务，包括：</p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white p-4 rounded-lg border border-gray200">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-battery-full text-primary"></i>
+                  <span class="font-bold">电池质保</span>
+                </div>
+                <p class="text-sm text-gray600">12个月（非人为损坏）</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-gray200">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-cog text-primary"></i>
+                  <span class="font-bold">电机质保</span>
+                </div>
+                <p class="text-sm text-gray600">24个月（非人为损坏）</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-gray200">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-wrench text-primary"></i>
+                  <span class="font-bold">车架质保</span>
+                </div>
+                <p class="text-sm text-gray600">24个月（非人为损坏）</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg border border-gray200">
+                <div class="flex items-center gap-2 mb-2">
+                  <i class="fas fa-tools text-primary"></i>
+                  <span class="font-bold">易损件</span>
+                </div>
+                <p class="text-sm text-gray600">刹车、轮胎等 3个月</p>
+              </div>
+            </div>
+            <div class="mt-4 bg-white p-4 rounded-lg border border-gray200">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-headset text-brandRed"></i>
+                <span class="font-bold">增值服务</span>
+              </div>
+              <p class="text-sm text-gray600">终身免费技术咨询和调试服务 | 7天无理由退换货（不影响二次销售）</p>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-gray800">
+            <span class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary text-sm">
+              <i class="fas fa-headset"></i>
+            </span>
+            售后联系方式
+          </h4>
+          <div class="bg-lightGray rounded-xl p-6 border border-gray200">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray200">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-user text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray600">售后联系人</div>
+                  <div class="font-bold text-gray800">徐女士</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray200">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-phone text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray600">联系电话</div>
+                  <div class="font-bold text-gray800">13771255743</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray200">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-clock text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray600">服务时间</div>
+                  <div class="font-bold text-gray800">周一至周日 9:00-18:00</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray200">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-envelope text-lg"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-gray600">售后邮箱</div>
+                  <div class="font-bold text-gray800">service@damiin.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 模态框底部 -->
+      <div class="p-6 border-t border-gray200 flex justify-end sticky bottom-0 bg-white rounded-b-2xl">
+        <button id="closeAfterSalesBtn2" class="px-6 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all btn-press font-medium">
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript - 优化版 -->
+  <script>
+    // 初始化 AOS 动画
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+    });
+    
+    // 滚动进度条
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+    });
+    
+    // 导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+    
+    // 移动端菜单
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      mobileOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    menuBtn.addEventListener('click', openMobileMenu);
+    closeBtn.addEventListener('click', closeMobileMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    // 移动端菜单点击链接后关闭
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (this.getAttribute('href') !== '#') {
+          closeMobileMenu();
+        }
+      });
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // 产品折叠展开功能
+    const productToggleBtn = document.getElementById('productToggleBtn');
+    const productContent = document.getElementById('productContent');
+    const toggleIcon = document.getElementById('toggleIcon');
+    
+    productToggleBtn.addEventListener('click', function() {
+      productContent.classList.toggle('expanded');
+      toggleIcon.classList.toggle('rotate-180');
+      
+      if (productContent.classList.contains('expanded')) {
+        productToggleBtn.querySelector('span').textContent = '收起产品系列';
+        // 滚动到产品区域
+        setTimeout(() => {
+          document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else {
+        productToggleBtn.querySelector('span').textContent = '查看产品系列';
+      }
+    });
+
+    // 鼠标hover展开产品（仅桌面端）
+    const productsSection = document.getElementById('products');
+    productsSection.addEventListener('mouseenter', function(e) {
+      if (window.innerWidth >= 768 && !productContent.classList.contains('expanded')) {
+        productContent.classList.add('expanded');
+        toggleIcon.classList.add('rotate-180');
+        productToggleBtn.querySelector('span').textContent = '收起产品系列';
+      }
+    });
+
+    // 产品参数模态框功能
+    const specModal = document.getElementById('specModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const closeModalBtn2 = document.getElementById('closeModalBtn2');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+    const viewSpecBtns = document.querySelectorAll('.view-spec-btn');
+
+    // ES 标准版参数HTML - 优化版
+    const esSpecHTML = `
+      <div class="overflow-x-auto rounded-xl border border-gray200">
+        <table class="spec-table w-full border-collapse">
+          <thead>
+            <tr class="bg-lightGray">
+              <th class="px-6 py-4 text-left font-bold text-gray800 w-1/3">参数项</th>
+              <th class="px-6 py-4 text-left font-bold text-gray800">参数值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">产品型号</td>
+              <td>ES</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">电池容量</td>
+              <td>144WH 36V 4Ah</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">续航里程</td>
+              <td>15~20KM</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">充电时间</td>
+              <td>2.0A/2h</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">电机</td>
+              <td>250W 后轮毂电机</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">轮胎</td>
+              <td>前轮20*2.4，后轮20*2.4充气轮辐轮</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">净重</td>
+              <td>14.5kg</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">载重量</td>
+              <td>100kg</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">最高设计车速</td>
+              <td>25km/h</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">刹车</td>
+              <td>后碟刹</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">车身材质</td>
+              <td>铝合金</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">防护等级</td>
+              <td>车辆IP65</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-gray700">传动系统</td>
+              <td>纯电动</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    // ES Pro 长续航版参数HTML - 优化版
+    const esProSpecHTML = `
+      <div class="overflow-x-auto rounded-xl border border-gray200">
+        <table class="spec-table w-full border-collapse">
+          <thead>
+            <tr class="bg-lightGray">
+              <th class="px-6 py-4 text-left font-bold text-gray800 w-1/3">参数项</th>
+              <th class="px-6 py-4 text-left font-bold text-gray800">参数值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">产品型号</td>
+              <td>ES Pro</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">电池容量</td>
+              <td class="highlight-cell">144WH 36V 4Ah 长续航</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">续航里程</td>
+              <td class="highlight-cell">30~35KM</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">充电时间</td>
+              <td class="highlight-cell">2.0A/5.5h</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">电机</td>
+              <td class="highlight-cell">350W</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">轮胎</td>
+              <td>前轮20*2.4，后轮20*2.4充气轮辐轮</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">净重</td>
+              <td class="highlight-cell">15.5kg</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">载重量</td>
+              <td>100kg</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">最高设计车速</td>
+              <td>25km/h</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">刹车</td>
+              <td class="highlight-cell">前后碟刹</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">车身材质</td>
+              <td>铝合金</td>
+            </tr>
+            <tr class="border-b border-gray100">
+              <td class="font-medium text-gray700">防护等级</td>
+              <td>车辆IP65</td>
+            </tr>
+            <tr>
+              <td class="font-medium text-gray700">传动系统</td>
+              <td>纯电动</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    // 打开参数模态框
+    viewSpecBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const product = this.getAttribute('data-product');
+        if (product === 'es') {
+          modalTitle.innerHTML = '<i class="fas fa-clipboard-list text-primary"></i> ES 标准版 - 详细参数';
+          modalContent.innerHTML = esSpecHTML;
+        } else if (product === 'es-pro') {
+          modalTitle.innerHTML = '<i class="fas fa-clipboard-list text-brandRed"></i> ES Pro 长续航版 - 详细参数';
+          modalContent.innerHTML = esProSpecHTML;
+        }
+        specModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // 关闭参数模态框
+    function closeSpecModal() {
+      specModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeModalBtn.addEventListener('click', closeSpecModal);
+    closeModalBtn2.addEventListener('click', closeSpecModal);
+
+    // 点击模态框外部关闭
+    specModal.addEventListener('click', function(e) {
+      if (e.target === specModal) {
+        closeSpecModal();
+      }
+    });
+
+    // 语言切换功能
+    // 全页面语言切换逻辑
+    function setLang(lang) {
+      var zh = document.getElementById('lang-zh');
+      var en = document.getElementById('lang-en');
+      if (zh) zh.style.display = lang === 'zh' ? '' : 'none';
+      if (en) en.style.display = lang === 'en' ? '' : 'none';
+      if (document.getElementById('currentLang')) document.getElementById('currentLang').textContent = lang === 'zh' ? '中' : 'EN';
+      if (document.getElementById('currentLang-en')) document.getElementById('currentLang-en').textContent = lang === 'zh' ? '中' : 'EN';
+      if (document.getElementById('mobileCurrentLang')) document.getElementById('mobileCurrentLang').textContent = lang === 'zh' ? '中文' : 'English';
+    }
+    function bindLangSwitch() {
+      document.querySelectorAll('.lang-option').forEach(option => {
+        option.addEventListener('click', function(e) {
+          e.preventDefault();
+          var lang = this.getAttribute('data-lang');
+          setLang(lang);
+          if (window.mobileLangDropdown) mobileLangDropdown.classList.remove('active');
+          if (window.mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+        });
+      });
+    }
+    bindLangSwitch();
+    setLang('zh');
+
+    // 售后模态框功能
+    const afterSalesModal = document.getElementById('afterSalesModal');
+    const afterSalesLink = document.getElementById('afterSalesLink');
+    const mobileAfterSalesLink = document.getElementById('mobileAfterSalesLink');
+    const footerAfterSalesBtn = document.getElementById('footerAfterSalesBtn');
+    const closeAfterSalesBtn = document.getElementById('closeAfterSalesBtn');
+    const closeAfterSalesBtn2 = document.getElementById('closeAfterSalesBtn2');
+
+    // 打开售后模态框
+    function openAfterSalesModal() {
+      afterSalesModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    afterSalesLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      openAfterSalesModal();
+    });
+
+    mobileAfterSalesLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeMobileMenu();
+      setTimeout(openAfterSalesModal, 300);
+    });
+
+    footerAfterSalesBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openAfterSalesModal();
+    });
+
+    // 关闭售后模态框
+    function closeAfterSalesModal() {
+      afterSalesModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    closeAfterSalesBtn.addEventListener('click', closeAfterSalesModal);
+    closeAfterSalesBtn2.addEventListener('click', closeAfterSalesModal);
+
+    // 点击模态框外部关闭
+    afterSalesModal.addEventListener('click', function(e) {
+      if (e.target === afterSalesModal) {
+        closeAfterSalesModal();
+      }
+    });
+
+    // ESC键关闭所有模态框和菜单
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        specModal.classList.remove('active');
+        afterSalesModal.classList.remove('active');
+        mobileLangDropdown.classList.remove('active');
+        mobileLangArrow.classList.remove('rotate-180');
+        closeMobileMenu();
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ============================================
+    // 表单提交处理 - 完全保留原有逻辑，不做任何改动
+    // ============================================
     const form = document.getElementById('form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -37,6 +2022,89 @@
         alert("提交失败：" + err.message);
       }
     });
+
+    // 数字滚动动画（可选）
+    function animateCounter(element, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          clearInterval(timer);
+          start = target;
+        }
+        element.textContent = Math.floor(start);
+      }, 16);
+    }
+
+    // 滚动到数字区域时触发动画
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.counter');
+          counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            animateCounter(counter, target);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // 初始化数字动画观察器
+    const counterSection = document.querySelector('#about');
+    if (counterSection) {
+      observer.observe(counterSection);
+    }
+    
+    // 添加页面加载完成后的初始化
+    document.addEventListener('DOMContentLoaded', function() {
+      // 为所有按钮添加涟漪效果（可选增强）
+      const buttons = document.querySelectorAll('.btn-press');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.classList.add('ripple');
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+    });
   </script>
+  
+  <style>
+    /* 涟漪效果样式 */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0);
+      animation: ripple-animation 0.6s ease-out;
+      pointer-events: none;
+    }
+    
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    
+    /* 确保按钮相对定位以支持涟漪 */
+    .btn-press {
+      position: relative;
+      overflow: hidden;
+    }
+  </style>
 </body>
 </html>
