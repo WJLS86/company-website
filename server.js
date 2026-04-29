@@ -7,7 +7,8 @@ const app = express();
 // Vercel环境下CORS可简化（默认允许前端域名访问）
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
+app.use(express.static('public'));   // 这行很关键，让 Express 能直接返回 public 下的文件
 
 // 表单提交接口（逻辑不变）
 app.post('/api/submit', async (req, res) => {
@@ -46,7 +47,13 @@ app.post('/api/submit', async (req, res) => {
 });
 
 // 适配Vercel端口（核心修改！）
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ 服务启动成功：http://localhost:${PORT}`);
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`✅ 服务启动成功：http://localhost:${PORT}`);
+// });
+// 可选：将所有未匹配的路由都返回 index.html（实现前端路由）
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: 'public' });
 });
+// 导出 app 供 Vercel 使用
+module.exports = app;
