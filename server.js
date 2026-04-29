@@ -2,13 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 // Vercel环境下CORS可简化（默认允许前端域名访问）
 app.use(cors());
 app.use(express.json());
-// app.use(express.static(__dirname));
-app.use(express.static('public'));   // 这行很关键，让 Express 能直接返回 public 下的文件
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));   // 这行很关键，让 Express 能直接返回 public 下的文件
 
 // 表单提交接口（逻辑不变）
 app.post('/api/submit', async (req, res) => {
@@ -53,7 +54,8 @@ app.post('/api/submit', async (req, res) => {
 // });
 // 可选：将所有未匹配的路由都返回 index.html（实现前端路由）
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
+
 // 导出 app 供 Vercel 使用
 module.exports = app;
