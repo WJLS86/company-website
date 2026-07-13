@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大敏单车 - 敏行无界</title>
-  <meta name="description" content="大敏单车，融合时尚设计与骑行科技的微电动出行品牌。提供ES标准版与ES Pro长续航版，8种情绪色彩，重新定义城市出行。">
-  <meta property="og:title" content="大敏单车 - 敏行无界">
-  <meta property="og:description" content="融合时尚设计与骑行科技的微电动出行品牌，探索八种色彩情绪。">
+  <title>Da Miin Bicycle - Agile Ways, No Limits</title>
+  <meta name="description" content="Da Miin Bicycle is a micro electric mobility brand combining fashion design and riding technology. Explore the ES Standard, ES Pro Long Range, and eight expressive color moods.">
+  <meta property="og:title" content="Da Miin Bicycle - Agile Ways, No Limits">
+  <meta property="og:description" content="A micro electric mobility brand combining fashion design and riding technology.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.damiin.com">
+  <meta property="og:url" content="https://www.damiin.com/en/">
   <meta property="og:image" content="https://www.damiin.com/og-image.jpg">
   <link rel="alternate" hreflang="zh-CN" href="https://www.damiin.com/">
   <link rel="alternate" hreflang="en" href="https://www.damiin.com/en/">
@@ -19,24 +19,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="stylesheet" href="../assets/css/tailwind.css">
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 
 <body class="antialiased bg-gray100">
   <!-- Page Loader -->
   <div class="page-loader" id="pageLoader">
     <div class="loader-spinner mb-4"></div>
-    <p class="text-white/80 text-sm tracking-widest">大敏单车</p>
+    <p class="text-white/80 text-sm tracking-widest font-en">DA MIIN</p>
   </div>
 
   <!-- Toast Container -->
@@ -46,35 +46,35 @@
   <div class="scroll-progress" id="scrollProgress" style="width: 0%"></div>
 
   <!-- Back to Top -->
-  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <!-- Navigation -->
   <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-500">
     <div class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between text-white transition-all duration-300">
-      <a href="#hero" class="flex items-center group logo-link" aria-label="返回首页">
-        <img src="https://s41.ax1x.com/2026/04/29/peIdSG6.png" alt="大敏单车 Logo" width="180" height="40" decoding="async" class="h-4 md:h-6 w-auto transition-all duration-300 group-hover:scale-105 logo-img"
+      <a href="#hero" class="flex items-center group logo-link" aria-label="Back to home">
+        <img src="https://s41.ax1x.com/2026/04/29/peIdSG6.png" alt="Da Miin Bicycle Logo" width="180" height="40" decoding="async" class="h-4 md:h-6 w-auto transition-all duration-300 group-hover:scale-105 logo-img"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
         <!-- 图片加载失败时的文字备用 -->
         <div class="h-8 md:h-10 w-auto items-center gap-2 hidden fallback-logo">
-          <span class="text-2xl font-bold tracking-tight">大敏单车</span>
+          <span class="text-2xl font-bold font-en tracking-tight"><span class="text-brandRed">Da</span>Miin</span>
         </div>
       </a>
 
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#hero" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.home">首页</a>
-        <a href="#products" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.products">产品</a>
-        <a href="#technology" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.technology">技术</a>
-        <a href="#contact" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.contact">联系我们</a>
-        <a href="support.html" id="afterSalesLink" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.afterSales">售后支持</a>
+        <a href="#hero" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.home">Home</a>
+        <a href="#products" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.products">Products</a>
+        <a href="#technology" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.technology">Technology</a>
+        <a href="#contact" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.contact">Contact Us</a>
+        <a href="support.html" id="afterSalesLink" class="link-underline hover:text-primary transition-colors font-medium py-1 text-sm tracking-wide" data-lang-key="nav.afterSales">Support</a>
       </nav>
-      <a href="en/index.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-all bg-white/5 border border-white/10 hover:border-white/30 text-sm font-en" aria-label="English version">
+      <a href="../index.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-white/10 transition-all bg-white/5 border border-white/10 hover:border-white/30 text-sm font-en" aria-label="Chinese version">
         <i class="fas fa-globe text-xs opacity-70"></i>
-        English
+        中文
       </a>
 
-      <button id="menuBtn" class="md:hidden text-white text-xl w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press border border-white/10" aria-label="打开菜单">
+      <button id="menuBtn" class="md:hidden text-white text-xl w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press border border-white/10" aria-label="Open menu">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -82,27 +82,27 @@
     <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/60 z-40 md:hidden backdrop-blur-sm"></div>
 
     <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-gray900/98 bg-blur p-8 z-50 shadow-2xl border-l border-white/10 overflow-y-auto">
-      <button id="closeBtn" class="absolute top-6 right-6 text-white text-lg w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press" aria-label="关闭菜单">
+      <button id="closeBtn" class="absolute top-6 right-6 text-white text-lg w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all btn-press" aria-label="Close menu">
         <i class="fas fa-times"></i>
       </button>
       <div class="mt-16 flex flex-col space-y-1 text-white">
         <a href="#hero" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5" data-lang-key="nav.home">
-          <i class="fas fa-home w-5 text-center text-primary"></i> 首页
+          <i class="fas fa-home w-5 text-center text-primary"></i> Home
         </a>
         <a href="#products" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5" data-lang-key="nav.products">
-          <i class="fas fa-bicycle w-5 text-center text-primary"></i> 产品
+          <i class="fas fa-bicycle w-5 text-center text-primary"></i> Products
         </a>
         <a href="#technology" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5" data-lang-key="nav.technology">
-          <i class="fas fa-cogs w-5 text-center text-primary"></i> 技术
+          <i class="fas fa-cogs w-5 text-center text-primary"></i> Technology
         </a>
         <a href="#contact" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5" data-lang-key="nav.contact">
-          <i class="fas fa-phone w-5 text-center text-primary"></i> 联系我们
+          <i class="fas fa-phone w-5 text-center text-primary"></i> Contact Us
         </a>
         <a href="support.html" id="mobileAfterSalesLink" class="text-lg hover:text-primary transition-colors flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5" data-lang-key="nav.afterSales">
-          <i class="fas fa-headset w-5 text-center text-primary"></i> 售后支持
+          <i class="fas fa-headset w-5 text-center text-primary"></i> Support
         </a>
-        <a href="en/index.html" class="mt-6 border-t border-white/10 pt-6 px-4 text-lg hover:text-primary transition-colors flex items-center gap-3 rounded-xl" aria-label="English version">
-          <i class="fas fa-globe w-5 text-center text-primary"></i> English
+        <a href="../index.html" class="mt-6 border-t border-white/10 pt-6 px-4 text-lg hover:text-primary transition-colors flex items-center gap-3 rounded-xl" aria-label="Chinese version">
+          <i class="fas fa-globe w-5 text-center text-primary"></i> 中文
         </a>
       </div>
     </div>
@@ -110,28 +110,28 @@
 
   <!-- Hero Section -->
   <section id="hero" class="min-h-[100svh] flex items-center bg-dark relative overflow-hidden">
-    <img src="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg" alt="大敏单车 ES 系列产品" width="1600" height="1067" decoding="async" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-center md:object-right opacity-90">
+    <img src="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg" alt="Da Miin ES series bicycle" width="1600" height="1067" decoding="async" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-center md:object-right opacity-90">
     <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15 pointer-events-none"></div>
     <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/60 to-transparent pointer-events-none"></div>
 
     <div class="container mx-auto px-4 md:px-8 text-white z-10 relative pt-24 pb-20">
       <div class="max-w-3xl">
-        <p class="text-sm md:text-base tracking-[0.25em] text-white/70 mb-4" data-aos="fade-up" data-aos-duration="900">微电动出行品牌</p>
+        <p class="text-sm md:text-base tracking-[0.25em] uppercase font-en text-white/70 mb-4" data-aos="fade-up" data-aos-duration="900">DA MIIN BICYCLE</p>
         <h1 class="text-[clamp(3rem,8vw,6.5rem)] font-bold mb-5 text-shadow-lg tracking-tight" data-aos="fade-up" data-aos-duration="1000">
-          大敏单车
+          Da Miin Bicycle
         </h1>
         <p class="text-[clamp(1.25rem,3vw,2rem)] mb-5 font-light tracking-wide" data-aos="fade-up" data-aos-delay="120" data-aos-duration="1000">
-          敏行无界 · 重新定义城市出行
+          Agile Ways, No Limits
         </p>
         <p class="text-base md:text-lg text-white/75 max-w-xl mb-9 leading-relaxed" data-aos="fade-up" data-aos-delay="220" data-aos-duration="1000">
-          融合时尚设计与微电动科技，打造更轻、更灵活、更有个性的城市出行方式。
+          Fashion-minded design meets micro electric technology for lighter, more flexible, and more expressive urban mobility.
         </p>
         <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="320" data-aos-duration="1000">
           <a href="#contact" class="btn-press btn-primary inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium transition-all shadow-card" data-lang-key="hero.contact">
-            立即咨询
+            Contact Us
           </a>
           <a href="#products" class="btn-press btn-secondary inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium transition-all" data-lang-key="hero.explore">
-            查看车型
+            View Models
           </a>
         </div>
       </div>
@@ -144,16 +144,16 @@
 
     <div class="container mx-auto px-4 md:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="about.title">品牌简介</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="about.title">Brand Story <span class="font-en text-primary font-medium">About Da Miin</span></h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
         <p class="text-gray600 max-w-3xl mx-auto text-lg" data-lang-key="about.subtitle">
-          无锡大敏单车有限公司，融合时尚设计与骑行科技的创新企业
+          Wuxi Da Miin Bicycle Co., Ltd., an innovative company combining fashion design and riding technology
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="rounded-2xl overflow-hidden shadow-soft group" data-aos="fade-right">
-          <a href="https://imgchr.com/i/peIJzwt"><img src="https://s41.ax1x.com/2026/04/29/peIJzwt.jpg" alt="大敏单车品牌形象展示" border="0" width="900" height="675" decoding="async"
+          <a href="https://imgchr.com/i/peIJzwt"><img src="https://s41.ax1x.com/2026/04/29/peIJzwt.jpg" alt="Da Miin brand image" border="0" width="900" height="675" decoding="async"
                class="w-full h-auto object-cover img-zoom"
                loading="lazy"
                onerror="this.src='https://images.unsplash.com/photo-1485965120184-e224f723d621?w=800&q=80'"/></a>
@@ -163,38 +163,38 @@
           <div class="mb-8">
             <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
               <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary"><i class="fas fa-building"></i></span>
-              <span data-lang-key="about.concept">品牌理念</span>
+              <span data-lang-key="about.concept">Brand Concept</span>
             </h3>
             <p class="mb-4 text-lg leading-relaxed text-gray700" data-lang-key="about.concept.desc1">
-              无锡大敏单车有限公司（简称"大敏单车"）成立于2025年，总部位于江苏省无锡市，是一家融合时尚设计与骑行科技的创新企业。
+              Founded in 2025 and headquartered in Wuxi, Jiangsu, Wuxi Da Miin Bicycle Co., Ltd. is an innovative company combining fashion design and riding technology.
             </p>
             <p class="text-lg leading-relaxed text-gray700" data-lang-key="about.concept.desc2">
-              我们致力于为都市人群打造兼具设计感、趣味性与个性的微电动出行工具，重新定义城市出行的美学与体验。
+              We create micro electric mobility products with design, personality, and everyday fun, redefining the aesthetics and experience of urban travel.
             </p>
           </div>
 
           <div>
             <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
               <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary"><i class="fas fa-users"></i></span>
-              <span data-lang-key="about.team">创始团队</span>
+              <span data-lang-key="about.team">Founding Team</span>
             </h3>
             <p class="text-lg leading-relaxed text-gray700" data-lang-key="about.team.desc">
-              团队由一群热爱城市文化、洞察潮流趋势的创造者组成。核心成员由毕业于伦敦时装学院的设计师与电助力自行车领域资深专家组成，携手拥有20年制造经验的合作伙伴，将创意落地为可信赖的时尚出行。
+              Our team brings together creators who understand urban culture and lifestyle trends. Core members include London College of Fashion graduates and senior e-bike experts, working with manufacturing partners with 20 years of experience.
             </p>
           </div>
 
           <div class="grid grid-cols-3 gap-4 mt-10">
             <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default" data-aos="zoom-in">
               <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors counter-value" data-target="20">0</div>
-              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.years">年制造经验</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.years">Years Manufacturing</div>
             </div>
             <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default" data-aos="zoom-in">
               <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors counter-value" data-target="8">0</div>
-              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.colors">种色彩系列</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.colors">Color Series</div>
             </div>
             <div class="bg-lightGray rounded-2xl p-5 text-center group hover:bg-primary hover:text-white transition-all duration-300 cursor-default" data-aos="zoom-in">
               <div class="text-3xl font-bold text-primary mb-2 group-hover:text-white transition-colors counter-value" data-target="3">0</div>
-              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.modes">种骑行模式</div>
+              <div class="text-sm text-gray600 group-hover:text-white/80 transition-colors" data-lang-key="about.modes">Riding Modes</div>
             </div>
           </div>
         </div>
@@ -206,15 +206,15 @@
   <section id="products" class="py-24 bg-lightGray relative">
     <div class="container mx-auto px-4 md:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="products.title">产品概览</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="products.title">Product Overview <span class="font-en text-primary font-medium">Models</span></h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
         <p class="text-gray600 max-w-3xl mx-auto text-lg" data-lang-key="products.subtitle">
-          两款核心产品，满足不同出行需求
+          Two core models for different urban mobility needs
         </p>
       </div>
       <div id="productContent" class="product-slider-container show-display">
         <div class="product-slider-wrapper relative">
-          <button class="product-slider-prev absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-primary hover:text-white z-10 flex items-center justify-center transition-all duration-300 hidden md:flex" aria-label="上一个产品">
+          <button class="product-slider-prev absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-primary hover:text-white z-10 flex items-center justify-center transition-all duration-300 hidden md:flex" aria-label="Previous product">
             <i class="fas fa-chevron-left"></i>
           </button>
 
@@ -222,37 +222,37 @@
             <!-- ES Standard -->
             <div class="product-card w-[340px] md:w-[380px] flex-shrink-0 bg-white rounded-2xl shadow-card product-card-hover border border-gray100">
               <div class="h-64 md:h-72 overflow-hidden rounded-t-2xl relative bg-gray100">
-                <a href="https://imgchr.com/i/peIdoTA"><img src="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg" border="0" alt="ES 标准版微电动自行车" width="900" height="675" decoding="async"
+                <a href="https://imgchr.com/i/peIdoTA"><img src="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg" border="0" alt="ES Standard micro electric bicycle" width="900" height="675" decoding="async"
                      class="w-full h-full object-cover"
                      loading="lazy"/></a>
-                <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">标准版</div>
+                <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">STANDARD</div>
               </div>
               <div class="p-6">
                 <div class="flex justify-between items-start mb-3">
-                  <h3 class="text-xl font-bold" data-lang-key="products.es">ES 标准版</h3>
+                  <h3 class="text-xl font-bold" data-lang-key="products.es">ES Standard</h3>
                   <span class="text-primary font-bold font-en">ES</span>
                 </div>
                 <div class="space-y-2 text-sm">
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.battery">续航里程</span>
+                    <span class="text-gray500" data-lang-key="products.battery">Range</span>
                     <span class="font-semibold">15-20 km</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.weight">净重</span>
+                    <span class="text-gray500" data-lang-key="products.weight">Net Weight</span>
                     <span class="font-semibold">14.5 kg</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.speed">最高速</span>
+                    <span class="text-gray500" data-lang-key="products.speed">Max Speed</span>
                     <span class="font-semibold">25 km/h</span>
                   </div>
                   <div class="flex justify-between py-2">
-                    <span class="text-gray500" data-lang-key="products.brake">刹车系统</span>
-                    <span class="font-semibold">后碟刹</span>
+                    <span class="text-gray500" data-lang-key="products.brake">Brake System</span>
+                    <span class="font-semibold">Rear Disc Brake</span>
                   </div>
                 </div>
                 <div class="mt-6 flex gap-3">
-                  <a href="products/es.html" class="btn-secondary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.spec">了解详情</a>
-                  <a href="#contact" class="btn-primary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.buy">立即咨询</a>
+                  <a href="products/es.html" class="btn-secondary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.spec">View Details</a>
+                  <a href="#contact" class="btn-primary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.buy">Contact Us</a>
                 </div>
               </div>
             </div>
@@ -260,43 +260,43 @@
             <!-- ES Pro -->
             <div class="product-card w-[340px] md:w-[380px] flex-shrink-0 bg-white rounded-2xl shadow-card product-card-hover border border-gray100">
               <div class="h-64 md:h-72 overflow-hidden rounded-t-2xl relative bg-gray100">
-                <a href="https://imgchr.com/i/peIdsoR"><img src="https://s41.ax1x.com/2026/04/29/peIdsoR.png" border="0" alt="ES Pro 长续航版微电动自行车" width="900" height="675" decoding="async"
+                <a href="https://imgchr.com/i/peIdsoR"><img src="https://s41.ax1x.com/2026/04/29/peIdsoR.png" border="0" alt="ES Pro Long Range micro electric bicycle" width="900" height="675" decoding="async"
                      class="w-full h-full object-cover"
                      loading="lazy"/></a>
-                <div class="absolute top-4 left-4 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full">长续航</div>
+                <div class="absolute top-4 left-4 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full">PRO</div>
               </div>
               <div class="p-6">
                 <div class="flex justify-between items-start mb-3">
-                  <h3 class="text-xl font-bold" data-lang-key="products.es-pro">ES Pro 长续航版</h3>
+                  <h3 class="text-xl font-bold" data-lang-key="products.es-pro">ES Pro Long Range</h3>
                   <span class="text-brandRed font-bold font-en">ES PRO</span>
                 </div>
                 <div class="space-y-2 text-sm">
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.battery">续航里程</span>
+                    <span class="text-gray500" data-lang-key="products.battery">Range</span>
                     <span class="font-semibold text-brandRed">30-35 km</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.weight">净重</span>
+                    <span class="text-gray500" data-lang-key="products.weight">Net Weight</span>
                     <span class="font-semibold">15.5 kg</span>
                   </div>
                   <div class="flex justify-between py-2 border-b border-gray100">
-                    <span class="text-gray500" data-lang-key="products.speed">最高速</span>
+                    <span class="text-gray500" data-lang-key="products.speed">Max Speed</span>
                     <span class="font-semibold">25 km/h</span>
                   </div>
                   <div class="flex justify-between py-2">
-                    <span class="text-gray500" data-lang-key="products.brake">刹车系统</span>
-                    <span class="font-semibold text-brandRed">前后双碟刹</span>
+                    <span class="text-gray500" data-lang-key="products.brake">Brake System</span>
+                    <span class="font-semibold text-brandRed">Front & Rear Disc Brakes</span>
                   </div>
                 </div>
                 <div class="mt-6 flex gap-3">
-                  <a href="products/es-pro.html" class="btn-secondary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.spec">了解详情</a>
-                  <a href="#contact" class="btn-primary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.buy">立即咨询</a>
+                  <a href="products/es-pro.html" class="btn-secondary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.spec">View Details</a>
+                  <a href="#contact" class="btn-primary flex-1 px-4 py-2.5 rounded-lg transition-all text-center font-medium text-sm" data-lang-key="products.buy">Contact Us</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <button class="product-slider-next absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-primary hover:text-white z-10 flex items-center justify-center transition-all duration-300 hidden md:flex" aria-label="下一个产品">
+          <button class="product-slider-next absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg hover:bg-primary hover:text-white z-10 flex items-center justify-center transition-all duration-300 hidden md:flex" aria-label="Next product">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
@@ -314,31 +314,31 @@
   <section id="why" class="py-24 bg-white relative">
     <div class="container mx-auto px-4 md:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">为什么选择大敏单车</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Da Miin</h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
-        <p class="text-gray600 max-w-3xl mx-auto text-lg">把好看、轻便、稳定和服务放在同一个出行工具里，让短途移动更轻松。</p>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">Style, lightness, stability, and support in one urban mobility product.</p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-5 md:gap-6">
         <div class="bg-lightGray rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-transparent hover:border-primary/10" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-feather"></i></span>
-          <h3 class="font-bold text-lg mb-2">车身轻巧</h3>
-          <p class="text-gray700 text-sm leading-relaxed">ES 14.5kg，ES Pro 15.5kg，日常搬动和停放更省心。</p>
+          <h3 class="font-bold text-lg mb-2">Light Body</h3>
+          <p class="text-gray700 text-sm leading-relaxed">ES weighs 14.5 kg and ES Pro weighs 15.5 kg, making daily handling easier.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-transparent hover:border-primary/10" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-palette"></i></span>
-          <h3 class="font-bold text-lg mb-2">情绪色彩</h3>
-          <p class="text-gray700 text-sm leading-relaxed">八种色彩对应八种情绪，让通勤工具也能表达个人风格。</p>
+          <h3 class="font-bold text-lg mb-2">Expressive Colors</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Eight color moods turn everyday mobility into a personal style choice.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-transparent hover:border-primary/10" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-battery-three-quarters"></i></span>
-          <h3 class="font-bold text-lg mb-2">侧取电池</h3>
-          <p class="text-gray700 text-sm leading-relaxed">便于取放和维护，满足高频城市短途出行需求。</p>
+          <h3 class="font-bold text-lg mb-2">Side Battery Access</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Convenient battery handling supports frequent short-distance city use.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 border border-transparent hover:border-primary/10" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-headset"></i></span>
-          <h3 class="font-bold text-lg mb-2">服务可追踪</h3>
-          <p class="text-gray700 text-sm leading-relaxed">独立售后支持页整理常见问题和联系方式，咨询更清晰。</p>
+          <h3 class="font-bold text-lg mb-2">Clear Support</h3>
+          <p class="text-gray700 text-sm leading-relaxed">The support page gathers common questions and service contact paths in one place.</p>
         </div>
       </div>
     </div>
@@ -348,63 +348,51 @@
   <section id="scenarios" class="py-24 bg-lightGray relative">
     <div class="container mx-auto px-4 md:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">适合这些使用场景</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Built for These Scenarios</h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
-        <p class="text-gray600 max-w-3xl mx-auto text-lg">不只看参数，更要看它能不能自然放进你的日常路线里。</p>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">The best mobility product fits naturally into real daily routes.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         <div class="bg-white rounded-2xl overflow-hidden shadow-card border border-gray200" data-aos="fade-up">
           <div class="relative aspect-[4/3] bg-gray900 overflow-hidden">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg">
-              <source src="assets/videos/commute.mp4" type="video/mp4">
+              <source src="../assets/videos/commute.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <span class="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-lg"><i class="fas fa-play text-xs"></i></span>
           </div>
-          <div class="p-6">
-            <h3 class="font-bold text-lg mb-2">通勤代步</h3>
-            <p class="text-gray700 text-sm leading-relaxed">覆盖地铁站到公司、社区到商圈等最后几公里路线。</p>
-          </div>
+          <div class="p-6"><h3 class="font-bold text-lg mb-2">Daily Commute</h3><p class="text-gray700 text-sm leading-relaxed">Cover the last few kilometers between metro stations, offices, and neighborhoods.</p></div>
         </div>
         <div class="bg-white rounded-2xl overflow-hidden shadow-card border border-gray200" data-aos="fade-up">
           <div class="relative aspect-[4/3] bg-gray900 overflow-hidden">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="https://s41.ax1x.com/2026/04/29/peIJzwt.jpg">
-              <source src="assets/videos/campus.mp4" type="video/mp4">
+              <source src="../assets/videos/campus.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <span class="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-lg"><i class="fas fa-play text-xs"></i></span>
           </div>
-          <div class="p-6">
-            <h3 class="font-bold text-lg mb-2">园区短途</h3>
-            <p class="text-gray700 text-sm leading-relaxed">适合办公园区、厂区、校园等点到点高频移动。</p>
-          </div>
+          <div class="p-6"><h3 class="font-bold text-lg mb-2">Campus and Parks</h3><p class="text-gray700 text-sm leading-relaxed">Move efficiently across business parks, campuses, and factory areas.</p></div>
         </div>
         <div class="bg-white rounded-2xl overflow-hidden shadow-card border border-gray200" data-aos="fade-up">
           <div class="relative aspect-[4/3] bg-gray900 overflow-hidden">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="https://s41.ax1x.com/2026/04/29/peIdsoR.png">
-              <source src="assets/videos/trunk.mp4" type="video/mp4">
+              <source src="../assets/videos/trunk.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <span class="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-lg"><i class="fas fa-play text-xs"></i></span>
           </div>
-          <div class="p-6">
-            <h3 class="font-bold text-lg mb-2">后备箱携带</h3>
-            <p class="text-gray700 text-sm leading-relaxed">快拆车把和折叠脚踏让收纳更灵活，周末出行更方便。</p>
-          </div>
+          <div class="p-6"><h3 class="font-bold text-lg mb-2">Trunk-Friendly Trips</h3><p class="text-gray700 text-sm leading-relaxed">Quick-release handlebar and folding pedals make weekend carrying easier.</p></div>
         </div>
         <div class="bg-white rounded-2xl overflow-hidden shadow-card border border-gray200" data-aos="fade-up">
           <div class="relative aspect-[4/3] bg-gray900 overflow-hidden">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" poster="https://s41.ax1x.com/2026/04/29/peIdoTA.jpg">
-              <source src="assets/videos/weekend.mp4" type="video/mp4">
+              <source src="../assets/videos/weekend.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <span class="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-white/90 text-primary flex items-center justify-center shadow-lg"><i class="fas fa-play text-xs"></i></span>
           </div>
-          <div class="p-6">
-            <h3 class="font-bold text-lg mb-2">周末轻骑</h3>
-            <p class="text-gray700 text-sm leading-relaxed">去咖啡店、公园和城市街区，轻松骑，也好看。</p>
-          </div>
+          <div class="p-6"><h3 class="font-bold text-lg mb-2">Weekend Light Rides</h3><p class="text-gray700 text-sm leading-relaxed">Ride to cafes, parks, and city streets with a clean, expressive look.</p></div>
         </div>
       </div>
     </div>
@@ -418,64 +406,64 @@
 
     <div class="container mx-auto px-4 md:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4"><span data-lang-key="colors.title">颜色&情绪色谱</span></h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4"><span data-lang-key="colors.title">Colors & Emotions</span> <span class="font-en text-primary font-medium">Palette</span></h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
         <p class="text-xl text-center mb-6 opacity-90 font-light" data-aos="fade-up" data-lang-key="colors.subtitle1">
-          色彩是你情绪的表达
+          Color expresses how you move through the city
         </p>
         <p class="text-center max-w-3xl mx-auto mb-16 opacity-70 leading-relaxed" data-aos="fade-up" data-lang-key="colors.subtitle2">
-          在出行被数据与效率定义的今天，大敏选择回归人的情感本质。我们将八种深邃的情绪融入色彩设计，让每个颜色都成为你内心世界的外在延伸。
+          In a world where mobility is often defined by data and efficiency, Da Miin returns to human emotion. Eight color moods turn every ride into a personal expression.
         </p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="color-card bg-happiness/10 rounded-2xl p-5 md:p-6 text-center border border-happiness/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-happiness flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-happiness/20 transition-transform duration-300 hover:scale-110">😊</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">欢乐</h3>
-          <p class="text-happiness font-medium text-sm mb-2" data-lang-key="colors.happiness">欢乐黄</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">如阳光般温暖灿烂，点亮每一天的好心情</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Happiness</h3>
+          <p class="text-happiness font-medium text-sm mb-2" data-lang-key="colors.happiness">Happiness Yellow</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Warm and bright like sunlight, lighting up every ride</p>
         </div>
         <div class="color-card bg-romance/10 rounded-2xl p-5 md:p-6 text-center border border-romance/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-romance flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-romance/20 transition-transform duration-300 hover:scale-110">💜</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">浪漫</h3>
-          <p class="text-romance font-medium text-sm mb-2" data-lang-key="colors.romance">浪漫紫</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">梦幻而优雅，为都市生活增添诗意</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Romance</h3>
+          <p class="text-romance font-medium text-sm mb-2" data-lang-key="colors.romance">Romance Purple</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Dreamy and elegant, adding poetry to urban life</p>
         </div>
         <div class="color-card bg-wisdom/10 rounded-2xl p-5 md:p-6 text-center border border-wisdom/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-wisdom flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-wisdom/20 transition-transform duration-300 hover:scale-110">🧠</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">智慧</h3>
-          <p class="text-wisdom font-medium text-sm mb-2" data-lang-key="colors.wisdom">智慧灰</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">沉稳内敛，彰显理性与思考的力量</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Wisdom</h3>
+          <p class="text-wisdom font-medium text-sm mb-2" data-lang-key="colors.wisdom">Wisdom Gray</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Calm and restrained, shaped by clarity and thought</p>
         </div>
         <div class="color-card bg-confidence/10 rounded-2xl p-5 md:p-6 text-center border border-confidence/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-confidence flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-confidence/20 transition-transform duration-300 hover:scale-110">💪</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">自信</h3>
-          <p class="text-confidence font-medium text-sm mb-2" data-lang-key="colors.confidence">自信蓝</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">深邃坚定，驾驭都市的从容态度</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Confidence</h3>
+          <p class="text-confidence font-medium text-sm mb-2" data-lang-key="colors.confidence">Confidence Blue</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Deep and confident, built for calm city control</p>
         </div>
         <div class="color-card bg-mystery/10 rounded-2xl p-5 md:p-6 text-center border border-mystery/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-mystery flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-mystery/20 transition-transform duration-300 hover:scale-110">🖤</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">神秘</h3>
-          <p class="text-mystery font-medium text-sm mb-2" data-lang-key="colors.mystery">神秘黑</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">低调神秘，释放无限可能的魅力</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Mystery</h3>
+          <p class="text-mystery font-medium text-sm mb-2" data-lang-key="colors.mystery">Mystery Black</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Low-key and mysterious, full of possibility</p>
         </div>
         <div class="color-card bg-empathy/10 rounded-2xl p-5 md:p-6 text-center border border-empathy/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-empathy flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-empathy/20 transition-transform duration-300 hover:scale-110">🥰</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">共情</h3>
-          <p class="text-empathy font-medium text-sm mb-2" data-lang-key="colors.empathy">共情粉</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">温柔细腻，连接彼此的心灵温度</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Empathy</h3>
+          <p class="text-empathy font-medium text-sm mb-2" data-lang-key="colors.empathy">Empathy Pink</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Gentle and delicate, connecting emotional warmth</p>
         </div>
         <div class="color-card bg-love/10 rounded-2xl p-5 md:p-6 text-center border border-love/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-love flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-love/20 transition-transform duration-300 hover:scale-110">❤️</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">热爱</h3>
-          <p class="text-love font-medium text-sm mb-2" data-lang-key="colors.love">挚爱红</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">热烈真挚，勇敢表达内心的热爱</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Love</h3>
+          <p class="text-love font-medium text-sm mb-2" data-lang-key="colors.love">Love Red</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Bold and sincere, expressing inner passion</p>
         </div>
         <div class="color-card bg-calmness/10 rounded-2xl p-5 md:p-6 text-center border border-calmness/20 backdrop-blur-sm cursor-default" data-aos="fade-up">
           <div class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-full bg-calmness flex items-center justify-center text-3xl md:text-4xl shadow-lg ring-4 ring-calmness/20 transition-transform duration-300 hover:scale-110">🧘</div>
-          <h3 class="text-lg md:text-xl font-bold mb-1">平静</h3>
-          <p class="text-calmness font-medium text-sm mb-2" data-lang-key="colors.calmness">平静绿</p>
-          <p class="color-desc text-xs text-white/60 leading-relaxed">宁静自然，在喧嚣中寻找内心平衡</p>
+          <h3 class="text-lg md:text-xl font-bold mb-1">Calmness</h3>
+          <p class="text-calmness font-medium text-sm mb-2" data-lang-key="colors.calmness">Calmness Green</p>
+          <p class="color-desc text-xs text-white/60 leading-relaxed">Natural and quiet, finding balance in the city</p>
         </div>
       </div>
     </div>
@@ -485,10 +473,10 @@
   <section id="technology" class="py-24 bg-white relative">
     <div class="container mx-auto px-4 md:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">核心技术</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Core Technology <span class="font-en text-primary font-medium">Ride Tech</span></h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
         <p class="text-gray600 max-w-3xl mx-auto text-lg">
-          创新科技，打造卓越骑行体验
+          Innovative technology for a better everyday ride
         </p>
       </div>
 
@@ -498,11 +486,11 @@
             <i class="fas fa-pencil-ruler"></i>
           </div>
           <div class="rounded-xl overflow-hidden mb-6 h-48 bg-gray100">
-            <a href="https://imgchr.com/i/peIdVII"><img src="https://s41.ax1x.com/2026/04/29/peIdVII.jpg" alt="极简设计理念展示" border="0" width="600" height="400" decoding="async" class="w-full h-full object-cover img-zoom"
+            <a href="https://imgchr.com/i/peIdVII"><img src="https://s41.ax1x.com/2026/04/29/peIdVII.jpg" alt="Minimal design showcase" border="0" width="600" height="400" decoding="async" class="w-full h-full object-cover img-zoom"
                  loading="lazy"/></a>
           </div>
-          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">极简设计</h3>
-          <p class="text-gray700 leading-relaxed">采用无链条+无脚踏纯电驱动设计，整车结构更简洁，外观更具未来感，让出行回归纯粹。</p>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Minimal Design</h3>
+          <p class="text-gray700 leading-relaxed">A chainless, pedal-free electric drive gives the frame a cleaner structure and a more futuristic look.</p>
         </div>
 
         <div class="bg-lightGray rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10" data-aos="fade-up">
@@ -511,13 +499,13 @@
           </div>
           <div class="rounded-xl overflow-hidden mb-6 h-48 bg-gray100">
             <img src="https://s41.ax1x.com/2026/04/29/peIdVII.jpg"
-                 alt="智能动力系统展示"
+                 alt="Smart power system showcase"
                  width="600" height="400" decoding="async"
                  class="w-full h-full object-cover img-zoom"
                  loading="lazy">
           </div>
-          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">智能动力</h3>
-          <p class="text-gray700 leading-relaxed">通过电控系统精准调控动力输出，从起步到加速全程流畅，三档模式满足不同场景需求。</p>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Smart Power</h3>
+          <p class="text-gray700 leading-relaxed">The electronic control system delivers smooth power from launch to acceleration, with three modes for different situations.</p>
         </div>
 
         <div class="bg-lightGray rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10" data-aos="fade-up">
@@ -526,50 +514,50 @@
           </div>
           <div class="rounded-xl overflow-hidden mb-6 h-48 bg-gray100">
             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&h=400&fit=crop"
-                 alt="全球定位系统展示"
+                 alt="Global positioning showcase"
                  width="600" height="400" decoding="async"
                  class="w-full h-full object-cover img-zoom"
                  loading="lazy">
           </div>
-          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">全球定位系统</h3>
-          <p class="text-gray700 leading-relaxed">搭载定位模块与专属应用，结合蓝牙与双模定位技术，实时寻车、轨迹记录，防盗无忧。</p>
+          <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Global Positioning</h3>
+          <p class="text-gray700 leading-relaxed">GPS positioning, app connectivity, Bluetooth, and dual-mode locating support real-time search, route records, and anti-theft protection.</p>
         </div>
       </div>
 
       <div>
         <h3 class="text-2xl font-bold mb-8 text-center" data-aos="fade-up">
-          产品亮点
+          Product Highlights <span class="font-en text-primary font-medium">Product Highlights</span>
         </h3>
 
         <div class="bg-lightGray rounded-2xl p-6 md:p-8 shadow-card mb-12 border border-gray200" data-aos="fade-up">
           <h4 class="text-xl font-bold mb-6 text-center flex items-center justify-center gap-2">
             <i class="fas fa-layer-group text-primary"></i>
-            三种模式随心选择
+            Three Riding Modes
           </h4>
           <div class="grid md:grid-cols-3 gap-4 md:gap-6 text-center">
             <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
               <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
                 <i class="fas fa-walking"></i>
               </div>
-              <h4 class="text-lg font-bold mb-2">步行模式</h4>
+              <h4 class="text-lg font-bold mb-2">Walk Mode</h4>
               <p class="text-primary text-2xl font-bold font-en">13<span class="text-sm ml-1">km/h</span></p>
-              <p class="text-xs text-gray500 mt-2">安全缓行，人流密集区首选</p>
+              <p class="text-xs text-gray500 mt-2">Slow and safe for crowded areas</p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
               <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
                 <i class="fas fa-bicycle"></i>
               </div>
-              <h4 class="text-lg font-bold mb-2">常规模式</h4>
+              <h4 class="text-lg font-bold mb-2">Daily Mode</h4>
               <p class="text-primary text-2xl font-bold font-en">18<span class="text-sm ml-1">km/h</span></p>
-              <p class="text-xs text-gray500 mt-2">日常通勤，平衡速度与续航</p>
+              <p class="text-xs text-gray500 mt-2">Balanced speed and range for commuting</p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray100 hover:border-primary/20 group">
               <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-xl">
                 <i class="fas fa-rocket"></i>
               </div>
-              <h4 class="text-lg font-bold mb-2">高速模式</h4>
+              <h4 class="text-lg font-bold mb-2">Sport Mode</h4>
               <p class="text-primary text-2xl font-bold font-en">25<span class="text-sm ml-1">km/h</span></p>
-              <p class="text-xs text-gray500 mt-2">畅快骑行，高效抵达目的地</p>
+              <p class="text-xs text-gray500 mt-2">A faster ride for efficient trips</p>
             </div>
           </div>
         </div>
@@ -577,43 +565,43 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" data-aos="fade-up">
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-weight"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">极致轻量</h4>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Lightweight</h4>
             <p class="text-xs md:text-sm text-gray700">ES 14.5kg / ES Pro 15.5kg</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-circle"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">20寸大轮</h4>
-            <p class="text-xs md:text-sm text-gray700">20寸轮毂，骑行更稳定</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">20-inch Wheels</h4>
+            <p class="text-xs md:text-sm text-gray700">20-inch wheels for a steadier ride</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-lightbulb"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">氛围灯光</h4>
-            <p class="text-xs md:text-sm text-gray700">时尚氛围灯，骑行更有仪式感</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Ambient Lighting</h4>
+            <p class="text-xs md:text-sm text-gray700">Stylish ambient lighting for a more expressive ride</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-shoe-prints"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">折叠脚踏</h4>
-            <p class="text-xs md:text-sm text-gray700">可折叠设计，收纳尺寸更小</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Folding Footrest</h4>
+            <p class="text-xs md:text-sm text-gray700">Foldable design for compact storage</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-battery-three-quarters"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">侧取电池</h4>
-            <p class="text-xs md:text-sm text-gray700">便捷更换，续航无忧</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Side-Access Battery</h4>
+            <p class="text-xs md:text-sm text-gray700">Easy battery access for convenient range management</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-charging-station"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">新国标充电</h4>
-            <p class="text-xs md:text-sm text-gray700">符合新国标充电口标准</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Standard Charging Port</h4>
+            <p class="text-xs md:text-sm text-gray700">Compliant with standard charging port requirements</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-tools"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">快拆车把</h4>
-            <p class="text-xs md:text-sm text-gray700">一步转动，可放进后备箱</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Quick-Release Handlebar</h4>
+            <p class="text-xs md:text-sm text-gray700">Quick turn design for easier trunk storage</p>
           </div>
           <div class="bg-lightGray rounded-2xl p-5 md:p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-300 group border border-transparent hover:border-primary/10">
             <div class="text-3xl md:text-4xl mb-3 text-primary group-hover:scale-110 transition-transform duration-300 inline-block"><i class="fas fa-stop"></i></div>
-            <h4 class="font-bold mb-1 text-sm md:text-base">机械碟刹</h4>
-            <p class="text-xs md:text-sm text-gray700">ES后刹 / ES Pro前后双刹</p>
+            <h4 class="font-bold mb-1 text-sm md:text-base">Mechanical Disc Brakes</h4>
+            <p class="text-xs md:text-sm text-gray700">ES rear brake / ES Pro front and rear brakes</p>
           </div>
         </div>
       </div>
@@ -624,42 +612,42 @@
   <section id="assurance" class="py-24 bg-white relative">
     <div class="container mx-auto px-4 md:px-8">
       <div class="text-center mb-14" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">服务保障与合作支持</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Service Assurance & Partner Support</h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
-        <p class="text-gray600 max-w-3xl mx-auto text-lg">购买前看清配置，购买后有人跟进；个人用户、园区和渠道合作都能快速找到入口。</p>
+        <p class="text-gray600 max-w-3xl mx-auto text-lg">Clear product information before purchase, reachable support after purchase, and a simple path for individual, campus, channel, and enterprise inquiries.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 mb-10">
         <div class="bg-lightGray rounded-2xl p-6 shadow-card border border-transparent hover:border-primary/10 transition-all duration-300" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-shield-halved"></i></span>
-          <h3 class="font-bold text-lg mb-2">主要部件保障</h3>
-          <p class="text-gray700 text-sm leading-relaxed">电池 12 个月，电机、车架等按售后政策支持，具体以购车凭证与实际保修说明为准。</p>
+          <h3 class="font-bold text-lg mb-2">Core Parts Coverage</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Battery coverage starts at 12 months, with motor, frame, and other support handled according to the purchase record and warranty policy.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card border border-transparent hover:border-primary/10 transition-all duration-300" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-headset"></i></span>
-          <h3 class="font-bold text-lg mb-2">售后响应清晰</h3>
-          <p class="text-gray700 text-sm leading-relaxed">电话、邮件、企业微信和售后支持页集中展示，工作时间内便于快速对接问题。</p>
+          <h3 class="font-bold text-lg mb-2">Clear Support Paths</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Phone, email, WeCom, and the support page are grouped clearly so questions can be routed during service hours.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card border border-transparent hover:border-primary/10 transition-all duration-300" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-handshake"></i></span>
-          <h3 class="font-bold text-lg mb-2">合作场景支持</h3>
-          <p class="text-gray700 text-sm leading-relaxed">支持园区、校园、渠道和企业采购咨询，可根据使用场景沟通车型与交付需求。</p>
+          <h3 class="font-bold text-lg mb-2">Partner Use Cases</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Campus, park, channel, and enterprise purchase inquiries can be discussed by route, volume, and delivery needs.</p>
         </div>
         <div class="bg-lightGray rounded-2xl p-6 shadow-card border border-transparent hover:border-primary/10 transition-all duration-300" data-aos="fade-up">
           <span class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl mb-5"><i class="fas fa-clipboard-check"></i></span>
-          <h3 class="font-bold text-lg mb-2">信息透明可查</h3>
-          <p class="text-gray700 text-sm leading-relaxed">产品参数、使用注意、常见问题和保修说明分区呈现，减少咨询前的不确定感。</p>
+          <h3 class="font-bold text-lg mb-2">Transparent Details</h3>
+          <p class="text-gray700 text-sm leading-relaxed">Specifications, usage notes, FAQs, and warranty information are separated clearly to reduce uncertainty before inquiry.</p>
         </div>
       </div>
 
       <div class="bg-primary rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row justify-between gap-6 items-start md:items-center shadow-card" data-aos="fade-up">
         <div>
-          <h3 class="text-2xl font-bold mb-2">不确定哪款适合你的路线？</h3>
-          <p class="text-white/80">留下通勤距离、使用场景和期望，我们可以帮你快速判断 ES 或 ES Pro。</p>
+          <h3 class="text-2xl font-bold mb-2">Not sure which model fits your route?</h3>
+          <p class="text-white/80">Share your commute distance, use case, and expectations. We can help compare ES and ES Pro quickly.</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-          <a href="#contact" class="bg-white text-primary rounded-full px-7 py-3.5 text-center font-medium hover:bg-gray100 transition-colors">立即咨询</a>
-          <a href="support.html" class="btn-secondary rounded-full px-7 py-3.5 text-center font-medium">查看售后支持</a>
+          <a href="#contact" class="bg-white text-primary rounded-full px-7 py-3.5 text-center font-medium hover:bg-gray100 transition-colors">Contact Us</a>
+          <a href="support.html" class="btn-secondary rounded-full px-7 py-3.5 text-center font-medium">View Support</a>
         </div>
       </div>
     </div>
@@ -670,10 +658,10 @@
     <div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-white via-transparent to-white/50"></div>
     <div class="container mx-auto px-4 md:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">联系我们</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us <span class="font-en text-primary font-medium">Inquiry</span></h2>
         <div class="w-20 h-1 bg-brandRed mx-auto mb-6 rounded-full"></div>
         <p class="text-gray600 max-w-3xl mx-auto text-lg">
-          无论您有任何问题或需求，我们都将竭诚为您服务
+          For product questions, purchasing inquiries, or support needs, our team is ready to help.
         </p>
       </div>
 
@@ -683,7 +671,7 @@
             <span class="w-10 h-10 bg-brandRed/10 rounded-lg flex items-center justify-center text-brandRed">
               <i class="fas fa-address-card"></i>
             </span>
-            联系信息
+            Contact Information
           </h3>
 
           <div class="space-y-6">
@@ -692,8 +680,8 @@
                 <i class="fas fa-map-marker-alt text-lg"></i>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-gray800">公司地址</h4>
-                <p class="text-gray700">江苏省无锡市滨湖区华润悦玺 2201</p>
+                <h4 class="font-bold mb-1 text-gray800">Address</h4>
+                <p class="text-gray700">Room 2201, China Resources Yuexi, Binhu District, Wuxi, Jiangsu, China</p>
               </div>
             </div>
 
@@ -702,9 +690,9 @@
                 <i class="fas fa-phone text-lg"></i>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-gray800">联系电话</h4>
-                <p class="text-gray700">徐女士：13771255743</p>
-                <p class="text-gray500 text-sm">工作时间：周一至周日 8:30-17:30</p>
+                <h4 class="font-bold mb-1 text-gray800">Phone</h4>
+                <p class="text-gray700">Ms. Xu: +86 137 7125 5743</p>
+                <p class="text-gray500 text-sm">Service hours: Mon-Sun 8:30-17:30</p>
               </div>
             </div>
 
@@ -713,7 +701,7 @@
                 <i class="fas fa-envelope text-lg"></i>
               </div>
               <div>
-                <h4 class="font-bold mb-1 text-gray800">电子邮箱</h4>
+                <h4 class="font-bold mb-1 text-gray800">Email</h4>
                 <p class="text-gray700">service@damiin.com</p>
                 <p class="text-gray700">sales@damiin.com</p>
               </div>
@@ -728,64 +716,64 @@
             <span class="w-10 h-10 bg-brandRed/10 rounded-lg flex items-center justify-center text-brandRed">
               <i class="fas fa-paper-plane"></i>
             </span>
-            在线留言
+            Online Inquiry
           </h3>
 
           <form id="contactForm" class="space-y-5">
             <div class="grid md:grid-cols-2 gap-5">
               <div class="group">
-                <label class="block text-gray700 mb-2 font-medium text-sm" for="name">姓名 <span class="text-brandRed">*</span></label>
+                <label class="block text-gray700 mb-2 font-medium text-sm" for="name">Name <span class="text-brandRed">*</span></label>
                 <div class="relative">
                   <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
-                  <input type="text" id="name" name="name" autocomplete="name" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="请输入您的姓名" required>
+                  <input type="text" id="name" name="name" autocomplete="name" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="Your name" required>
                 </div>
               </div>
               <div class="group">
-                <label class="block text-gray700 mb-2 font-medium text-sm" for="phone">电话 <span class="text-brandRed">*</span></label>
+                <label class="block text-gray700 mb-2 font-medium text-sm" for="phone">Phone <span class="text-brandRed">*</span></label>
                 <div class="relative">
                   <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
-                  <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="请输入您的联系电话" required pattern="[0-9]{11}" title="请输入11位手机号码">
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="Your phone number" required pattern="[0-9]{11}" title="Please enter an 11-digit mobile number">
                 </div>
               </div>
             </div>
 
             <div class="group">
-              <label class="block text-gray700 mb-2 font-medium text-sm" for="email">电子邮箱</label>
+              <label class="block text-gray700 mb-2 font-medium text-sm" for="email">Email</label>
               <div class="relative">
                 <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
-                <input type="email" id="email" name="email" autocomplete="email" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="请输入您的电子邮箱（选填）">
+                <input type="email" id="email" name="email" autocomplete="email" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="Your email address (optional)">
               </div>
             </div>
 
             <div class="group">
-              <label class="block text-gray700 mb-2 font-medium text-sm" for="message">留言内容</label>
+              <label class="block text-gray700 mb-2 font-medium text-sm" for="message">Message</label>
               <div class="relative">
                 <i class="fas fa-comment absolute left-4 top-4 text-gray400 group-focus-within:text-primary transition-colors"></i>
-                <textarea id="message" name="message" rows="4" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50 resize-none" placeholder="请描述您的需求或问题（选填）"></textarea>
+                <textarea id="message" name="message" rows="4" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50 resize-none" placeholder="Tell us what you need (optional)"></textarea>
               </div>
             </div>
 
             <div class="group">
-              <label class="block text-gray700 mb-2 font-medium text-sm" for="verificationAnswer">验证 <span class="text-brandRed">*</span></label>
+              <label class="block text-gray700 mb-2 font-medium text-sm" for="verificationAnswer">Verification <span class="text-brandRed">*</span></label>
               <div class="flex flex-col sm:flex-row gap-3">
                 <div class="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray300 bg-gray50 text-gray700 min-h-[50px] sm:w-44">
                   <i class="fas fa-shield-alt text-gray400"></i>
-                  <span id="challengeQuestion" class="font-medium">加载中...</span>
+                  <span id="challengeQuestion" class="font-medium">Loading...</span>
                 </div>
                 <div class="relative flex-1">
                   <i class="fas fa-equals absolute left-4 top-1/2 -translate-y-1/2 text-gray400 group-focus-within:text-primary transition-colors"></i>
-                  <input type="number" id="verificationAnswer" name="verificationAnswer" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="请输入答案" required inputmode="numeric">
+                  <input type="number" id="verificationAnswer" name="verificationAnswer" class="w-full pl-11 pr-4 py-3 rounded-xl border border-gray300 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all input-glow bg-gray50" placeholder="Enter the answer" required inputmode="numeric">
                 </div>
                 <button type="button" id="refreshChallengeBtn" class="btn-neutral px-4 py-3 rounded-xl transition-all btn-press flex items-center justify-center gap-2">
                   <i class="fas fa-rotate-right"></i>
-                  <span class="sm:hidden">刷新验证</span>
+                  <span class="sm:hidden">Refresh</span>
                 </button>
               </div>
             </div>
 
             <button type="submit" id="submitBtn" class="btn-primary w-full px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 font-medium btn-press mt-4 disabled:opacity-60 disabled:cursor-not-allowed">
               <i class="fas fa-paper-plane"></i>
-              <span>提交信息</span>
+              <span>Submit</span>
             </button>
           </form>
         </div>
@@ -802,39 +790,39 @@
         <div class="text-center group">
           <div class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
             <div class="text-center">
-              <a href="https://imgchr.com/i/peIfbQJ"><img src="https://s41.ax1x.com/2026/04/29/peIfbQJ.jpg" alt="小程序二维码" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
+              <a href="https://imgchr.com/i/peIfbQJ"><img src="https://s41.ax1x.com/2026/04/29/peIfbQJ.jpg" alt="Mini Program QR code" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
             </div>
           </div>
-          <p class="font-medium text-sm">关注小程序</p>
-          <p class="text-xs opacity-70">福利抢先领，优惠不错过</p>
+          <p class="font-medium text-sm">Mini Program</p>
+          <p class="text-xs opacity-70">Get updates and offers first</p>
         </div>
 
         <div class="text-center group">
           <div class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
             <div class="text-center">
-              <a href="https://imgchr.com/i/peIfqy9"><img src="https://s41.ax1x.com/2026/04/29/peIfqy9.jpg" alt="小红书二维码" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
+              <a href="https://imgchr.com/i/peIfqy9"><img src="https://s41.ax1x.com/2026/04/29/peIfqy9.jpg" alt="Xiaohongshu QR code" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
             </div>
           </div>
-          <p class="font-medium text-sm">关注小红书</p>
-          <p class="text-xs opacity-70">随时查看最新动态</p>
+          <p class="font-medium text-sm">Xiaohongshu</p>
+          <p class="text-xs opacity-70">Follow our latest updates</p>
         </div>
 
         <div class="text-center group">
           <div class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-xl mx-auto mb-4 flex items-center justify-center text-dark shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden">
             <div class="text-center">
-              <a href="https://imgchr.com/i/peIfLLR"><img src="https://s41.ax1x.com/2026/04/29/peIfLLR.jpg" alt="企业微信二维码" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
+              <a href="https://imgchr.com/i/peIfLLR"><img src="https://s41.ax1x.com/2026/04/29/peIfLLR.jpg" alt="WeCom QR code" border="0" width="320" height="320" loading="lazy" decoding="async" class="w-full h-full object-contain"/></a>
             </div>
           </div>
-          <p class="font-medium text-sm">关注企业微信</p>
-          <p class="text-xs opacity-70">咨询更便捷，服务更贴心</p>
+          <p class="font-medium text-sm">WeCom</p>
+          <p class="text-xs opacity-70">Convenient support and service</p>
         </div>
       </div>
 
       <div class="text-center text-xs opacity-60 pt-6 border-t border-white/10">
-        <p>© 2025 大敏单车 版权所有 | 总部：江苏省无锡市 | <span>苏ICP备XXXXXXXX号</span></p>
+        <p>© 2025 Da Miin Bicycle All rights reserved | Headquarters: Wuxi, Jiangsu | <span>ICP Registration Pending</span></p>
       </div>
     </div>
   </footer>
-  <script src="assets/js/home.js" defer></script>
+  <script src="../assets/js/home.js" defer></script>
 </body>
 </html>

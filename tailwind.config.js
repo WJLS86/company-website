@@ -1,0 +1,45 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./public/**/*.html'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2775BB',
+        secondary: '#165DFF',
+        brandRed: '#C41E24',
+        dark: '#0B1F33',
+        lightGray: '#f5f5f5',
+        gray50: '#f9fafb',
+        gray100: '#f8f9fa',
+        gray200: '#e9ecef',
+        gray300: '#dee2e6',
+        gray400: '#ced4da',
+        gray500: '#adb5bd',
+        gray600: '#6c757d',
+        gray700: '#495057',
+        gray800: '#343a40',
+        gray900: '#212529',
+        happiness: '#FFD166',
+        romance: '#9381FF',
+        wisdom: '#6C757D',
+        confidence: '#2775BB',
+        mystery: '#073B4C',
+        empathy: '#F8A4D8',
+        love: '#EF476F',
+        calmness: '#06D6A0',
+      },
+      fontFamily: {
+        sans: ['"Noto Sans SC"', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+        en: ['Montserrat', 'Arial', 'sans-serif'],
+      },
+      boxShadow: {
+        soft: '0 8px 22px rgba(0, 0, 0, 0.08)',
+        hover: '0 12px 28px rgba(0, 0, 0, 0.11)',
+        card: '0 1px 10px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 6px 18px rgba(0, 0, 0, 0.09)',
+        glow: '0 0 14px rgba(39, 117, 187, 0.22)',
+      },
+    },
+  },
+  plugins: [],
+};
